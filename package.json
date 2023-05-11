@@ -1,0 +1,28 @@
+{
+  "name": "hi-tech.ck.ua",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "typewatch": "tsc --noEmit --watch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-favicon": "^2.0.3",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^6.11.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@types/react-helmet": "^6.1.6",
+    "babel-preset-nano-react-app": "^0.1.0",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.5"
+  }
+}
