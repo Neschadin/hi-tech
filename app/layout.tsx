@@ -18,10 +18,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="uk">
       <body className={exo2.className}>
-        <div className="flex h-full flex-col justify-between">
+        <div className="flex h-screen flex-col justify-between">
           <Header />
 
-          <main className="max-w-cont border-4 self-center w-full">{children}</main>
+          <main className="w-full max-w-cont self-center border-2">
+            {children}
+          </main>
 
           <Footer />
         </div>

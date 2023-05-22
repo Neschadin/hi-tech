@@ -1,14 +1,14 @@
 import Image from "next/image";
-import styles from "./page.module.scss";
+// import styles from "./page.module.scss";
 import Head from "next/head";
 
 export default function Home() {
   return (
-    <>
-      {/* <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" /> */}
-
+    <div>
+    
+asd
   
-    </>
+    </div>
   );
 }
 

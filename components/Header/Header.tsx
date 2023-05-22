@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { NavMenu } from "./NavMenu";
 import { Button } from "../atomic/Button";
+import { DropDown } from "../atomic";
 
 export const Header: FC = () => {
   return (
@@ -11,6 +12,8 @@ export const Header: FC = () => {
 
         <NavMenu />
 
+        <DropDown />
+        
         <Button>Послуги</Button>
       </nav>
     </header>
