@@ -1,28 +1,33 @@
 {
   "name": "hi-tech.ck.ua",
   "version": "0.1.0",
-  "description": "",
+  "private": true,
   "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "typecheck": "tsc --noEmit",
-    "typewatch": "tsc --noEmit --watch"
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "license": "MIT",
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-favicon": "^2.0.3",
-    "react-helmet": "^6.1.0",
-    "react-router-dom": "^6.11.1"
+    "@types/node": "^20.2.1",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "eslint": "^8.41.0",
+    "eslint-config-next": "^13.4.3",
+    "next": "^13.4.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@types/react": "^18.0.24",
-    "@types/react-dom": "^18.0.8",
-    "@types/react-helmet": "^6.1.6",
-    "babel-preset-nano-react-app": "^0.1.0",
-    "typescript": "^5.0.4",
-    "vite": "^4.3.5"
-  }
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "postcss-import": "^15.1.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "tailwindcss": "^3.3.2"
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }
