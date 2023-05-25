@@ -7,13 +7,14 @@ type ButtonProps = PropsWithChildren & {
 };
 
 export const Button: FC<ButtonProps> = (props) => {
-  const { children, onClick, className = "", size } = props;
+  const { children, onClick, className = "", size = "M" } = props;
 
   const btnStyles = `
     inline-block
     flex justify-center items-center
     px-[26px]
-    h-[${size === "L" ? 48 : 42}px]
+    ${size === "M" && "h-[42px]"}
+    ${size === "L" && "h-[48px]"}
     bg-blue-500
     rounded-full
     text-white text-lg font-semibold
