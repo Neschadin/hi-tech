@@ -2,7 +2,7 @@
 
 import { FC, Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "./ChevronDownIcon";
+import { ChevronDownIcon } from "../icons";
 
 // function classNames(...classes: string[]) {
 //   return classes.filter(Boolean).join(" ");
@@ -58,7 +58,6 @@ export const DropDown: FC = () => {
               ? "rotate-180 transform transition duration-200"
               : "transition duration-200"
           }`}
-          aria-hidden="true"
         />
       </Menu.Button>
     </Menu>

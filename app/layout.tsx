@@ -2,8 +2,9 @@ import { ReactNode } from "react";
 import { Exo_2 } from "next/font/google";
 import "./globals.css";
 
-import { Header, Footer } from "../components";
+import { Header, Footer } from "@/components";
 import Head from "next/head";
+import { Container } from "@/components/atomic";
 
 const exo2 = Exo_2({ subsets: ["latin", "cyrillic"] });
 
@@ -21,9 +22,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <div className="flex h-screen flex-col justify-between">
           <Header />
 
-          <main className="w-full max-w-cont self-center border-2">
+          <Container
+            component="main"
+            className="border-2"
+          >
             {children}
-          </main>
+          </Container>
 
           <Footer />
         </div>
