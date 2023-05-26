@@ -1,5 +1,6 @@
 // import styles from "./footer.module.css";
 
+import Link from "next/link";
 import { Container } from "./atomic";
 import { InstagramIcon } from "./icons";
 
@@ -15,10 +16,13 @@ export const Footer = () => {
               Магазин цифрової техніки та сервісний центр у м. Черкаси
             </span>
 
-            <div className="flex items-center gap-2">
+            <Link
+              href={process.env.INSTA_URL || ""}
+              className="flex items-center gap-2"
+            >
               <InstagramIcon />
               <span className="text-sm">Instagram</span>
-            </div>
+            </Link>
           </div>
 
           <div className="grid w-[328px] grid-cols-1 grid-rows-3 gap-x-8 gap-y-4 font-medium sm:ml-[20%] md:grid-cols-3">
@@ -41,8 +45,8 @@ export const Footer = () => {
           </div>
         </div>
 
-        <hr className="border-divider mt-10 mb-2"/>
-        
+        <hr className="mb-2 mt-10 border-divider" />
+
         <div className="flex flex-col items-center justify-between text-center text-sm font-semibold sm:flex-row md:gap-10">
           <span>© ТОВ «Hi-Tech Сервіс», 2023. Всі права захищені.</span>
           <span className="md:ml-auto">Політика конфіденційності </span>
