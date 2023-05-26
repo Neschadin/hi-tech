@@ -2,12 +2,13 @@
 
 import { FC, useEffect, useRef, useState } from "react";
 import { ChevronDownIcon } from "../icons";
+import { Button } from "./Button";
 
 // function classNames(...classes: string[]) {
 //   return classes.filter(Boolean).join(" ");
 // }
 
-export const DropDown: FC = () => {
+export const DropDownSearch: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -34,17 +35,17 @@ export const DropDown: FC = () => {
 
   return (
     <div
-      className="relative inline-block text-lg font-semibold backdrop-blur-2xl"
+      className="relative mt-auto flex h-[60px] w-full max-w-[686px] items-center justify-between rounded-full bg-white pl-[28px] pr-[6px] text-lg font-semibold shadow-lg ring-2 ring-gray-300"
       ref={dropdownRef}
     >
       <div
-        className={`absolute top-0 flex h-[152px] w-full origin-top-right transform flex-col items-center justify-evenly rounded-[20px] bg-white px-4 pt-[42px] shadow-xl ring-1 ring-black ring-opacity-5 transition focus:outline-none ${
+        className={`absolute top-0 flex h-[500px] w-full  transform flex-col items-center justify-evenly rounded-[30px] px-4 pt-[60px] shadow-xl ring-1 ring-black ring-opacity-5 transition focus:outline-none ${
           isOpen
             ? "translate-y-0 opacity-100 duration-100 ease-out"
             : "translate-y-[-10px] opacity-0 duration-75 ease-in"
         }`}
       >
-        <a href="#" className="inline-flex gap-x-2">
+        {/* <a href="#" className="inline-flex gap-x-2">
           <span className="text-neutral-grey">096</span>
           <span className="whitespace-nowrap">800-33-33</span>
         </a>
@@ -54,22 +55,23 @@ export const DropDown: FC = () => {
         <a href="#" className="inline-flex gap-x-2">
           <span className="text-neutral-grey">0472</span>
           <span className="whitespace-nowrap">38-38-80</span>
-        </a>
+        </a> */}
       </div>
 
       <button
-        className="relative inline-flex h-[42px] w-full min-w-min items-center justify-center gap-x-2 rounded-full bg-white px-[26px] shadow-sm ring-[1.5px] ring-inset ring-neutral-dark hover:ring-neutral-grey"
+        className="relative inline-flex items-center justify-center gap-x-2"
         onClick={toggleMenu}
         onBlur={closeMenu}
       >
-        <span className="text-neutral-grey">063</span>
-        <span className="whitespace-nowrap">025-77-77</span>
+        <span className="whitespace-nowrap">Оберіть сферу допомоги</span>
         <ChevronDownIcon
           className={`h-3 w-3 text-neutral-grey transition duration-200 ${
             isOpen ? "rotate-180 transform" : ""
           }`}
         />
       </button>
+
+      <Button size="L">Дізнатися деталі</Button>
     </div>
   );
 };

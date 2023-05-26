@@ -29,7 +29,7 @@ export const HeroBg = () => (
       <Image
         src={laptop}
         alt="Laptop"
-        className=" absolute left-[572px] top-[-120px] rotate-[-40deg] scale-x-[-1] transform"
+        className=" absolute left-[572px] top-[-130px] rotate-[-40deg] scale-x-[-1] transform"
       />
     </div>
 

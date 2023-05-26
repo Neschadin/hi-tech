@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 import { Exo_2 } from "next/font/google";
 import "./globals.css";
 
-import { Header, Footer, BackgroundOverlay, Hero } from "@/components";
+import { Header, Footer, BackgroundOverlay } from "@/components";
 import { Container } from "@/components/atomic";
 
 const exo2 = Exo_2({ subsets: ["latin", "cyrillic"] });
@@ -21,11 +21,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         {/* <BackgroundOverlay /> */}
 
         <div className="flex h-screen flex-col justify-between">
-          <Hero />
-
-          <Container component="main" className="border-2">
-            {children}
-          </Container>
+          <main>{children}</main>
 
           <Footer />
 

@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0;
+}
+
 html,
 body {
-  @apply h-screen w-screen text-neutral-dark;
+  @apply hide-scrollbar h-screen w-screen text-neutral-dark;
   overflow-x: hidden;
 }

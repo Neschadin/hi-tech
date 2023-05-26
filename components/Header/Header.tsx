@@ -7,15 +7,15 @@ export const Header: FC = () => {
   return (
     // <header className="fixed w-screen border-b backdrop-blur-lg">
     <header className="fixed w-screen border-b-2 border-gray-300 backdrop-blur-2xl">
-      <Container className="min-h-[82px] items-center md:flex-row">
-        <p className="text-2xl font-bold">Hi-Tech</p>
+      <Container className="min-h-[82px] items-center justify-between md:flex-row">
+        <p className="text-2xl font-bold">{"Hi-Tech"}</p>
 
         <NavMenu />
 
         <div className="flex gap-3">
           <DropDown />
 
-          <Button>Послуги</Button>
+          <Button>{"Послуги"}</Button>
         </div>
       </Container>
     </header>

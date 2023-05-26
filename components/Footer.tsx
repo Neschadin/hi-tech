@@ -7,13 +7,13 @@ import { InstagramIcon } from "./icons";
 export const Footer = () => {
   return (
     <footer className="bg-gray-900 pb-10 pt-16 text-white">
-      <Container className="min-h-[264px]">
+      <Container className="min-h-[264px] justify-between">
         <div className="flex justify-between gap-4">
           <div className="flex h-[154px] max-w-[208px] flex-col justify-between">
             <p className="text-2xl font-bold">Hi-Tech</p>
 
             <span className="text-sm">
-              Магазин цифрової техніки та сервісний центр у м. Черкаси
+              {"Магазин цифрової техніки та сервісний центр у м.Черкаси"}
             </span>
 
             <Link
@@ -48,7 +48,7 @@ export const Footer = () => {
         <hr className="mb-2 mt-10 border-divider" />
 
         <div className="flex flex-col items-center justify-between text-center text-sm font-semibold sm:flex-row md:gap-10">
-          <span>© ТОВ «Hi-Tech Сервіс», 2023. Всі права захищені.</span>
+          <span>{"© ТОВ «Хай-Тек Трейд», 2023. Всі права захищені."}</span>
           <span className="md:ml-auto">Політика конфіденційності </span>
           <span>Умови користування </span>
         </div>
