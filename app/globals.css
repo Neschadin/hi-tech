@@ -7,8 +7,3 @@ body {
   @apply h-screen w-screen text-neutral-dark;
   overflow-x: hidden;
 }
-
-/* a {
-  color: inherit;
-  text-decoration: none;
-} */

@@ -5,7 +5,8 @@ import { DropDown, Button, Container } from "../atomic";
 
 export const Header: FC = () => {
   return (
-    <header className="border-b">
+    // <header className="fixed w-screen border-b backdrop-blur-lg">
+    <header className="fixed w-screen border-b-2 border-gray-300 backdrop-blur-2xl">
       <Container className="min-h-[82px] items-center md:flex-row">
         <p className="text-2xl font-bold">Hi-Tech</p>
 

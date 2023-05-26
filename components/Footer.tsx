@@ -1,7 +1,7 @@
 // import styles from "./footer.module.css";
 
-import { Container } from "../atomic";
-import { InstagramIcon } from "../icons";
+import { Container } from "./atomic";
+import { InstagramIcon } from "./icons";
 
 export const Footer = () => {
   return (

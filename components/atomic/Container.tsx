@@ -12,7 +12,7 @@ export const Container: FC<ContainerProps> = ({
   children,
 }) => (
   <Component
-    className={`container mx-auto flex max-w-cont flex-col justify-between self-center px-5 ${className}`}
+    className={`relative container mx-auto flex max-w-cont flex-col justify-between self-center px-5 ${className}`}
   >
     {children}
   </Component>
