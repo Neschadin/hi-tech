@@ -38,7 +38,7 @@ export const Footer = () => {
           </div>
 
           <div className="grid gap-y-4 font-medium">
-            <p className="text-lg font-semibold text-divider">HiTech</p>
+            <p className="text-lg font-semibold text-divider">Hi-Tech</p>
             <span>Про Нас</span>
             <span>Послуги</span>
             <span>Контакти</span>

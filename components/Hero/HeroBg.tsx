@@ -7,7 +7,7 @@ import tvremote from "@/public/img/heroBg/tvremote.png";
 
 export const HeroBg = () => (
   <>
-    <div className="absolute w-full">
+    <div aria-label="asd" className="absolute w-full">
       <Image
         src={tvremote}
         alt="TV Remote"

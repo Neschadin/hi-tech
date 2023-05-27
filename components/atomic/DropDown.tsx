@@ -38,10 +38,10 @@ export const DropDown: FC = () => {
       ref={dropdownRef}
     >
       <div
-        className={`absolute top-0 flex h-[152px] w-full origin-top-right transform flex-col items-center justify-evenly rounded-[20px] bg-white px-4 pt-[42px] shadow-xl ring-1 ring-black ring-opacity-5 transition focus:outline-none ${
+        className={`absolute top-0 flex h-[152px] w-full origin-top transform flex-col items-center justify-evenly rounded-[20px] bg-white px-4 pt-[42px] shadow-xl ring-1 ring-black ring-opacity-5 transition focus:outline-none ${
           isOpen
-            ? "translate-y-0 opacity-100 duration-100 ease-out"
-            : "translate-y-[-10px] opacity-0 duration-75 ease-in"
+            ? "scale-y-100 opacity-100 duration-100 ease-out"
+            : "invisible scale-y-90 opacity-0 duration-75 ease-in"
         }`}
       >
         <a href="#" className="inline-flex gap-x-2">
@@ -58,15 +58,15 @@ export const DropDown: FC = () => {
       </div>
 
       <button
-        className="relative inline-flex h-[42px] w-full min-w-min items-center justify-center gap-x-2 rounded-full bg-white px-[26px] shadow-sm ring-[1.5px] ring-inset ring-neutral-dark hover:ring-neutral-grey"
+        className="relative inline-flex h-[42px] w-full min-w-min items-center justify-center gap-x-2 rounded-full bg-white px-[26px] shadow-sm ring-[1.5px] ring-inset ring-neutral-grey hover:ring-neutral-dark"
         onClick={toggleMenu}
         onBlur={closeMenu}
       >
         <span className="text-neutral-grey">063</span>
         <span className="whitespace-nowrap">025-77-77</span>
         <ChevronDownIcon
-          className={`h-3 w-3 text-neutral-grey transition duration-200 ${
-            isOpen ? "rotate-180 transform" : ""
+          className={`h-3 w-3 transform text-neutral-grey transition duration-200 ${
+            isOpen ? "rotate-180" : ""
           }`}
         />
       </button>
