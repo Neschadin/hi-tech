@@ -36,7 +36,7 @@ export const DropDownSearch: FC = () => {
 
   return (
     <div
-      className="relative z-10 mt-auto h-[60px] w-full max-w-[686px] rounded-full text-lg font-semibold"
+      className="relative z-5 mt-auto h-[60px] w-full max-w-[686px] rounded-full text-lg font-semibold"
       ref={dropdownRef}
     >
       <div
