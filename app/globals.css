@@ -8,6 +8,6 @@
 
 html,
 body {
-  @apply hide-scrollbar h-screen w-screen text-neutral-dark;
+  @apply hide-scrollbar h-[2000px] w-screen text-neutral-dark;
   overflow-x: hidden;
 }
