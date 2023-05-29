@@ -20,12 +20,12 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body className={exo2.className}>
         {/* <BackgroundOverlay /> */}
 
+        <Header />
+
         <div className="flex h-full flex-col justify-between">
           <main>{children}</main>
 
           <Footer />
-
-          <Header />
         </div>
       </body>
     </html>

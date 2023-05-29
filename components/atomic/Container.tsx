@@ -1,18 +1,17 @@
-import { FC, ReactNode } from "react";
+import { FC, PropsWithChildren } from "react";
 
-type ContainerProps = {
+type TProps = PropsWithChildren & {
   className?: string;
   component?: keyof JSX.IntrinsicElements;
-  children: ReactNode;
 };
 
-export const Container: FC<ContainerProps> = ({
+export const Container: FC<TProps> = ({
   className = "",
   component: Component = "div",
   children,
 }) => (
   <Component
-    className={`relative container mx-auto flex max-w-cont flex-col self-center px-5 ${className}`}
+    className={`container relative mx-auto flex max-w-cont flex-col self-center px-5 ${className}`}
   >
     {children}
   </Component>

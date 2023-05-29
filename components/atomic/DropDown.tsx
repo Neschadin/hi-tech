@@ -64,11 +64,7 @@ export const DropDown: FC = () => {
       >
         <span className="text-neutral-grey">063</span>
         <span className="whitespace-nowrap">025-77-77</span>
-        <ChevronDownIcon
-          className={`h-3 w-3 transform text-neutral-grey transition duration-200 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
+        <ChevronDownIcon open={isOpen} />
       </button>
     </div>
   );

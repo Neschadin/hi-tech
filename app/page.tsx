@@ -1,14 +1,16 @@
 import Image from "next/image";
 // import styles from "./page.module.scss";
 import Head from "next/head";
-import { Hero, Section1 } from "@/components";
+import { Hero, Section1, Section2 } from "@/components";
 
 export default function Home() {
   return (
     <>
       <Hero />
 
-      <Section1/>
+      <Section1 />
+
+      <Section2 />
     </>
   );
 }

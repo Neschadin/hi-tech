@@ -1,4 +1,9 @@
-export const ChevronDownIcon = ({ className = "" }: { className?: string }) => (
+type TProps = {
+  className?: string;
+  open?: boolean;
+};
+
+export const ChevronDownIcon = ({ className = "", open = false }: TProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -6,7 +11,9 @@ export const ChevronDownIcon = ({ className = "" }: { className?: string }) => (
     strokeWidth="3"
     stroke="currentColor"
     aria-hidden="true"
-    className={className}
+    className={`h-3 w-3 transform text-neutral-grey transition duration-200 
+    ${open ? "rotate-180" : ""} 
+    ${className}`}
   >
     <path
       strokeLinecap="round"

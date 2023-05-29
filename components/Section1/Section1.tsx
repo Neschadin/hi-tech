@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import apple from "@/public/img/section1/apple.png";
 import iphone from "@/public/img/section1/iphone.png";
 import laptop from "@/public/img/section1/laptop.png";
@@ -25,18 +23,18 @@ export const Section1 = () => {
           З яким пристроєм у вас виникла проблема?
         </h2>
 
-        <div className="container flex gap-8 self-center">
-          <ItemSquare src={iphone}>Мобільні пристрої</ItemSquare>
+        <div className="container flex flex-wrap justify-center gap-7 self-center">
+          <ItemSquare img={iphone}>Мобільні пристрої</ItemSquare>
 
-          <ItemSquare src={laptop}>Ноутбуки</ItemSquare>
+          <ItemSquare img={laptop}>Ноутбуки</ItemSquare>
 
-          <ItemSquare src={tv}>Інша техніка</ItemSquare>
+          <ItemSquare img={tv}>Інша техніка</ItemSquare>
 
-          <ItemSquare src={printer}>Принтери та МФУ</ItemSquare>
+          <ItemSquare img={printer}>Принтери та МФУ</ItemSquare>
 
-          <ItemSquare src={flashdrive}>Відновлення даних</ItemSquare>
+          <ItemSquare img={flashdrive}>Відновлення даних</ItemSquare>
 
-          <ItemSquare src={apple}>Техніка Apple</ItemSquare>
+          <ItemSquare img={apple}>Техніка Apple</ItemSquare>
         </div>
       </Container>
     </section>

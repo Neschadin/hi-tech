@@ -30,6 +30,21 @@ module.exports = {
         "without-top":
           "0px 2px 44px rgba(0, 0, 0, 0.2) 0px 0px 0px 1px transparent",
       },
+      fontFamily: {
+        "body-small": ["Exo_2", "sans-serif"],
+      },
+      fontSize: {
+        h2: "56px",
+        "body-small": "16px",
+      },
+      fontWeight: {
+        h2: "400",
+        "body-small": "500",
+      },
+      lineHeight: {
+        h2: "56px",
+        "body-small": "24px",
+      },
     },
   },
   plugins: [],

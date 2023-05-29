@@ -1,27 +1,40 @@
 import { FC, PropsWithChildren } from "react";
 
-type ButtonProps = PropsWithChildren & {
+type TProps = PropsWithChildren & {
   onClick?: () => void;
   className?: string;
-  size?: "M" | "L";
+  size?: "S" | "M" | "L";
+  variant?: "filled" | "outlined";
 };
 
-export const Button: FC<ButtonProps> = (props) => {
-  const { children, onClick, className = "", size = "M" } = props;
+export const Button: FC<TProps> = (props) => {
+  const {
+    children,
+    onClick,
+    className = "",
+    size = "M",
+    variant = "filled",
+  } = props;
 
   const btnStyles = `
     inline-block
     flex justify-center items-center
-    px-[26px]
+    ${size === "S" ? "font-medium" : "font-semibold"}
+    ${size === "S" ? "px-[22px]" : "px-[26px]"}
+    ${size === "S" && "h-[36px]"}
     ${size === "M" && "h-[42px]"}
     ${size === "L" && "h-[48px]"}
-    bg-blue-500
+    ${
+      variant === "filled" &&
+      "bg-blue-500 text-white hover:bg-blue-600 focus-visible:bg-blue-600 active:bg-blue-700"
+    }
+    ${
+      variant === "outlined" &&
+      "text-primary border-2 border-primary hover:border-blue-600 hover:text-blue-600 focus-visible:border-blue-600 active:text-blue-700 active:border-blue-700"
+    }
     rounded-full
-    text-white text-lg font-semibold
+    text-lg
     transition duration-200 ease-out
-    hover:bg-blue-600
-    focus-visible:bg-blue-600
-    active:bg-blue-700
     ${className}
   `;
 

@@ -1,23 +1,28 @@
-import { FC, PropsWithChildren } from "react";
+import { FC } from "react";
 import Image, { StaticImageData } from "next/image";
+import { ChevronDownIcon } from "../icons";
+import Link from "next/link";
 
-type TItemSquare = PropsWithChildren & {
+type TProps = {
   className?: string;
-  src: StaticImageData;
+  img: StaticImageData;
+  children: string;
+  href?: string;
 };
 
-export const ItemSquare: FC<TItemSquare> = ({
+export const ItemSquare: FC<TProps> = ({
   children,
   className = "",
-  src,
-}) => {
-  return (
-    <div
-      className={`relative flex h-[188px] w-[208px] flex-col items-center justify-between gap-4 rounded-lg border border-gray-300 py-4 ${className}`}
-    >
-      <Image src={src} alt="src" />
+  img,
+  href = "#",
+}) => (
+  <div
+    className={`relative flex h-[188px] w-[208px] flex-col items-center justify-between gap-4 rounded-lg border border-gray-300 py-4 ${className}`}
+  >
+    <Image src={img} alt="img" />
 
-      {children}
-    </div>
-  );
-};
+    <Link href={href} className="inline-flex items-center gap-[6px]">
+      {children} <ChevronDownIcon className="-rotate-90 text-primary" />
+    </Link>
+  </div>
+);
