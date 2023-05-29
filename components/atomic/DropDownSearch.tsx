@@ -3,7 +3,7 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { ChevronDownIcon } from "../icons";
 import { Button } from "./Button";
-import { MenuItem } from "./MenuItem";
+import { ItemMenu } from "./ItemMenu";
 
 // function classNames(...classes: string[]) {
 //   return classes.filter(Boolean).join(" ");
@@ -46,12 +46,12 @@ export const DropDownSearch: FC = () => {
             : "invisible h-0 scale-y-90 opacity-0 duration-75 ease-in"
         }`}
       >
-        <MenuItem className="mt-4">Материнська плата</MenuItem>
-        <MenuItem>Клавіатура ноутбука</MenuItem>
-        <MenuItem>Термопаста ноутбука</MenuItem>
-        <MenuItem>Смартфон</MenuItem>
-        <MenuItem>Техніка Apple</MenuItem>
-        <MenuItem>Компʼютер</MenuItem>
+        <ItemMenu className="mt-4">Материнська плата</ItemMenu>
+        <ItemMenu>Клавіатура ноутбука</ItemMenu>
+        <ItemMenu>Термопаста ноутбука</ItemMenu>
+        <ItemMenu>Смартфон</ItemMenu>
+        <ItemMenu>Техніка Apple</ItemMenu>
+        <ItemMenu>Компʼютер</ItemMenu>
       </div>
 
       <div className="relative mt-auto flex h-[60px] w-full items-center justify-between rounded-full bg-white text-lg font-semibold shadow-round">

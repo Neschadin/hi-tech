@@ -1,11 +1,11 @@
 import { FC, PropsWithChildren } from "react";
 
-type MenuItemProps = PropsWithChildren & {
+type ItemMenuProps = PropsWithChildren & {
   onClick?: () => void;
   className?: string;
 };
 
-export const MenuItem: FC<MenuItemProps> = (props) => {
+export const ItemMenu: FC<ItemMenuProps> = (props) => {
   const { children, onClick, className = "" } = props;
 
   const btnStyles = `
