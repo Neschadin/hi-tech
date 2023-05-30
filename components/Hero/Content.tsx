@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Didact_Gothic } from "next/font/google";
+
 import { Container, DropDownSearch } from "../atomic";
 
 const didactGothic = Didact_Gothic({

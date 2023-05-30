@@ -1,8 +1,10 @@
+import Image from "next/image";
 import { Didact_Gothic } from "next/font/google";
+
 import { Button, Container } from "../atomic";
 import { CheckIcon } from "../icons";
+
 import img from "@/public/img/section2/img.png";
-import Image from "next/image";
 
 const didactGothic = Didact_Gothic({
   subsets: ["cyrillic"],

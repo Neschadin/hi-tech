@@ -1,3 +1,7 @@
+import { Didact_Gothic } from "next/font/google";
+
+import { ItemSquare, Container } from "../atomic";
+
 import apple from "@/public/img/section1/apple.png";
 import iphone from "@/public/img/section1/iphone.png";
 import laptop from "@/public/img/section1/laptop.png";
@@ -5,8 +9,6 @@ import flashdrive from "@/public/img/section1/flashdrive.png";
 import printer from "@/public/img/section1/printer.png";
 import tv from "@/public/img/section1/tv.png";
 
-import { Didact_Gothic } from "next/font/google";
-import { ItemSquare, Container } from "../atomic";
 
 const didactGothic = Didact_Gothic({
   subsets: ["cyrillic"],

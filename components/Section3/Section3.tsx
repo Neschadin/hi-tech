@@ -1,6 +1,7 @@
 import { Didact_Gothic } from "next/font/google";
 
 import { Button, Container } from "../atomic";
+
 import { LogoLenovo } from "@/public/img/section3/LogoLenovo";
 
 const didactGothic = Didact_Gothic({
