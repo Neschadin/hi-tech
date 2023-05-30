@@ -1,7 +1,14 @@
 import Image from "next/image";
 // import styles from "./page.module.scss";
 import Head from "next/head";
-import { Hero, Section1, Section2, Section3, Section4 } from "@/components";
+import {
+  Hero,
+  Section1,
+  Section2,
+  Section3,
+  Section4,
+  Section5,
+} from "@/components";
 
 export default function Home() {
   return (
@@ -15,6 +22,8 @@ export default function Home() {
       <Section3 />
 
       <Section4 />
+
+      <Section5 />
     </>
   );
 }
