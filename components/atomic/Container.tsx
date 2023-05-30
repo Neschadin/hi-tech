@@ -11,7 +11,7 @@ export const Container: FC<TProps> = ({
   children,
 }) => (
   <Component
-    className={`container relative mx-auto flex max-w-cont flex-col self-center px-5 ${className}`}
+    className={`container relative mx-auto flex max-w-cont self-center px-5 ${className}`}
   >
     {children}
   </Component>

@@ -18,12 +18,12 @@ const CheckItem = ({ children }: { children: string }) => (
 
 export const Section2 = () => {
   return (
-    <section className="relative min-h-[692px] max-w-[1920px]">
-      <Container>
+    <section className="relative max-w-[1920px]">
+      <Container className="h-auto py-5 md:h-[692px] md:py-0">
         <Image
           src={img}
           alt="img"
-          className="z-[-1] absolute max-h-[645px] right-0 top-[57px]"
+          className="absolute -bottom-6 right-0 z-[-1] hidden max-h-[645px] w-[73%] object-contain md:block"
         />
 
         <div className="container flex max-w-[568px] flex-col items-start gap-10">
@@ -32,9 +32,10 @@ export const Section2 = () => {
           </h3>
 
           <span className="text-xl font-medium">
-            Ремонт проводиться тільки після безкоштовної діагностики
-            компʼютера.Інженер приступає до роботи тільки після узгодження з
-            Вами ціни ремонту.
+            Ремонт проводиться тільки після безкоштовної діагностики компʼютера.
+            <br />
+            Інженер приступає до роботи тільки після узгодження з Вами ціни
+            ремонту.
           </span>
 
           <div className="container flex flex-col gap-6">

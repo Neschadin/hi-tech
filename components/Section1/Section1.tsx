@@ -16,7 +16,7 @@ const didactGothic = Didact_Gothic({
 export const Section1 = () => {
   return (
     <section className="relative min-h-[638px] max-w-[1920px]">
-      <Container className="flex-row gap-24">
+      <Container className="flex-col gap-24">
         <h2
           className={`${didactGothic.className} text-center text-[40px] font-normal`}
         >

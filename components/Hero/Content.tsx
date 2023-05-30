@@ -9,7 +9,7 @@ const didactGothic = Didact_Gothic({
 
 export const Content: FC = () => {
   return (
-    <Container className="top-40 min-h-[304px] items-center justify-start">
+    <Container className="top-40 min-h-[304px] items-center justify-start flex-col">
       <h1
         className={`${didactGothic.className} mb-6 text-center text-[63px] leading-[84px]`}
       >
