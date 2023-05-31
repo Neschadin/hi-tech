@@ -17,8 +17,7 @@ export const Button: FC<TProps> = (props) => {
   } = props;
 
   const btnStyles = `
-    inline-block
-    flex justify-center items-center
+    inline-flex justify-center items-center
     ${size === "S" ? "font-medium" : "font-semibold"}
     ${size === "S" ? "px-[22px]" : "px-[26px]"}
     ${size === "S" && "h-[36px]"}
