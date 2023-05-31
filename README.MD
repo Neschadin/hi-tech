@@ -2,7 +2,8 @@
 
 ```
 Welcome!
-This project is a website for Hi-Tech, a professional service center specializing in the repair and maintenance of electronic devices in Cherkasy, Ukraine.
+This project is a website for Hi-Tech, a professional service center specializing
+in the repair and maintenance of electronic devices in Cherkasy, Ukraine.
 ```
 ## Features
 
