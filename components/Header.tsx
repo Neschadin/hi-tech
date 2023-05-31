@@ -1,7 +1,7 @@
 import { FC } from "react";
 
-import { NavMenu } from "./NavMenu";
-import { DropDown, Button, Container } from "../atomic";
+import { NavMenu } from "./HeaderNavMenu";
+import { DropDown, Button, Container } from "./atomic";
 
 export const Header: FC = () => {
   return (
