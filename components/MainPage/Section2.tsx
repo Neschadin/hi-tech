@@ -4,7 +4,7 @@ import { Didact_Gothic } from "next/font/google";
 import { Button, Container } from "../atomic";
 import { CheckIcon } from "../icons";
 
-import img from "@/public/img/section2/img.png";
+import img from "@/public/imgMainPage/section2/img.png";
 
 const didactGothic = Didact_Gothic({
   subsets: ["cyrillic"],

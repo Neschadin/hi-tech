@@ -2,12 +2,12 @@ import { Didact_Gothic } from "next/font/google";
 
 import { Container, ItemRound, BgLight } from "../atomic";
 
-import tech from "@/public/img/section5/tech.png";
-import pro from "@/public/img/section5/pro.png";
-import pc from "@/public/img/section5/pc.png";
-import tv from "@/public/img/section5/tv.png";
-import norton from "@/public/img/section5/norton.png";
-import windows from "@/public/img/section5/windows.png";
+import tech from "@/public/imgMainPage/section5/tech.png";
+import pro from "@/public/imgMainPage/section5/pro.png";
+import pc from "@/public/imgMainPage/section5/pc.png";
+import tv from "@/public/imgMainPage/section5/tv.png";
+import norton from "@/public/imgMainPage/section5/norton.png";
+import windows from "@/public/imgMainPage/section5/windows.png";
 
 const didactGothic = Didact_Gothic({
   subsets: ["cyrillic"],

@@ -2,6 +2,7 @@ import { FC } from "react";
 
 import { NavMenu } from "./HeaderNavMenu";
 import { DropDown, Button, Container } from "./atomic";
+import Link from "next/link";
 
 export const Header: FC = () => {
   return (
@@ -14,7 +15,9 @@ export const Header: FC = () => {
         <div className="flex gap-3">
           <DropDown />
 
-          <Button>Послуги</Button>
+          <Button>
+            <Link href="/status">Стан ремонта</Link>
+          </Button>
         </div>
       </Container>
     </header>

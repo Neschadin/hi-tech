@@ -3,7 +3,6 @@ import { Exo_2 } from "next/font/google";
 import "./globals.css";
 
 import { Header, Footer, BackgroundOverlay } from "@/components";
-import { Container } from "@/components/atomic";
 
 const exo2 = Exo_2({ subsets: ["latin", "cyrillic"] });
 
@@ -17,16 +16,13 @@ export const metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="uk">
-      <body className={exo2.className}>
-
+      <body className={`flex flex-col ${exo2.className}`}>
         <Header />
 
-        <div className="relative flex h-full flex-col justify-between">
         {/* <BackgroundOverlay /> */}
-          <main>{children}</main>
+        <main className="h-full">{children}</main>
 
-          <Footer />
-        </div>
+        <Footer />
       </body>
     </html>
   );

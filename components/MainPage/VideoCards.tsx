@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import gpu from "@/public/img/section4/gpu.png";
-import gpu1 from "@/public/img/section4/gpu1.png";
-import gpu3 from "@/public/img/section4/gpu3.png";
+import gpu from "@/public/imgMainPage/section4/gpu.png";
+import gpu1 from "@/public/imgMainPage/section4/gpu1.png";
+import gpu3 from "@/public/imgMainPage/section4/gpu3.png";
 
 export const VideoCards = () => {
   return (

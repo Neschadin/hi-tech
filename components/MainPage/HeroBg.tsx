@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-import ipad from "@/public/img/heroBg/ipad.png";
-import iphone from "@/public/img/heroBg/iphone.png";
-import laptop from "@/public/img/heroBg/laptop.png";
-import tvremote from "@/public/img/heroBg/tvremote.png";
+import ipad from "@/public/imgMainPage/heroBg/ipad.png";
+import iphone from "@/public/imgMainPage/heroBg/iphone.png";
+import laptop from "@/public/imgMainPage/heroBg/laptop.png";
+import tvremote from "@/public/imgMainPage/heroBg/tvremote.png";
 
 export const HeroBg = () => (
   <>

@@ -5,7 +5,7 @@ import { InstagramIcon } from "./icons";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 pb-10 pt-16 text-white">
+    <footer className="mt-auto bg-gray-900 pb-10 pt-16 text-white">
       <Container className="min-h-[264px] flex-col justify-between">
         <div className="flex justify-between gap-4">
           <div className="flex h-[154px] max-w-[208px] flex-col justify-between">

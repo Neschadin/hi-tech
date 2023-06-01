@@ -2,7 +2,7 @@ import { Didact_Gothic } from "next/font/google";
 
 import { Button, Container } from "../atomic";
 
-import { LogoLenovo } from "@/public/img/section3/LogoLenovo";
+import { LogoLenovo } from "@/public/imgMainPage/section3/LogoLenovo";
 
 const didactGothic = Didact_Gothic({
   subsets: ["cyrillic"],
