@@ -2,6 +2,7 @@
 
 import { FC, useEffect, useRef, useState } from "react";
 import { ChevronDownIcon } from "../icons";
+import { KyivstarNumber, LifeNumber } from "./PhoneNumbers";
 
 // function classNames(...classes: string[]) {
 //   return classes.filter(Boolean).join(" ");
@@ -59,25 +60,11 @@ export const DropDown: FC = () => {
             : "invisible scale-y-90 opacity-0 duration-75 ease-in"
         }`}
       >
-        <a
-          href="tel:0968003333"
-          className="inline-flex gap-x-2"
-          onClick={toggleMenu}
-        >
-          <span className="text-neutral-grey">096</span>
-          <span className="whitespace-nowrap">800-33-33</span>
-        </a>
+        <LifeNumber onClick={toggleMenu} />
 
         <hr className="w-full" />
 
-        <a
-          href="tel:0472383880"
-          className="inline-flex gap-x-2"
-          onClick={toggleMenu}
-        >
-          <span className="text-neutral-grey">0472</span>
-          <span className="whitespace-nowrap">38-38-80</span>
-        </a>
+        <KyivstarNumber onClick={toggleMenu} />
       </div>
     </div>
   );
