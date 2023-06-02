@@ -4,7 +4,7 @@ import { HeroContent } from "./HeroContent";
 
 export const Hero: FC = () => {
   return (
-    <section className="relative min-h-[600px] max-w-[1920px]">
+    <section className="relative min-h-[580px] max-w-[1920px]">
       <HeroBg />
 
       <HeroContent />

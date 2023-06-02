@@ -20,7 +20,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <Header />
 
         {/* <BackgroundOverlay /> */}
-        <main className="h-full">{children}</main>
+        <main>{children}</main>
 
         <Footer />
       </body>

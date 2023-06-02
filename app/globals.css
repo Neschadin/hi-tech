@@ -8,7 +8,7 @@
 
 html,
 body {
-  @apply hide-scrollbar h-screen w-screen min-w-[320px] text-neutral-dark;
+  @apply hide-scrollbar h-full w-screen min-w-[320px] text-neutral-dark;
   overflow-x: hidden;
 }
 

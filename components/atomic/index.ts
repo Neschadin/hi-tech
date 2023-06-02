@@ -5,6 +5,7 @@ export * from "./ItemSquare";
 export * from "./ItemRound";
 export * from "./CheckItem";
 export * from "./BgLight";
+export * from "./LightCircle";
 export * from "./PhoneNumbers";
 export { DropDown } from "./DropDown";
 export { DropDownSearch } from "./DropDownSearch";
