@@ -13,7 +13,7 @@ export const ContactNumbers = () => {
         Давайте поспілкуємося
       </h2>
 
-      <div className="mx-auto max-w-[846px] text-xl font-medium mb-20">
+      <div className="mx-auto mb-20 max-w-[846px] text-xl font-medium">
         Бажаєте зв’язатися по телефону? Звичайно. Наші експерти готові допомогти
         з понеділка по суботу –{" "}
         <span className="underline underline-offset-4">09:00 до 17:00</span>.

@@ -1,22 +1,28 @@
 import { PropsWithChildren } from "react";
 import { KyivstarNumber, LifeNumber } from "../atomic";
+import { KyivstarIcon, LifeIcon, MailIcon } from "../icons";
 
 const Wrap = ({ children }: PropsWithChildren) => (
-  <div className="w-[328px] h-16 items-center justify-center gap-4 rounded-lg border border-input-light">
+  <div className="flex h-16 w-[328px] items-center justify-center gap-4 rounded-lg border border-input-light">
     {children}
   </div>
 );
 
 export const Numbers = () => (
-  <div className="flex flex-wrap justify-between gap-8">
+  <div className="flex flex-wrap justify-evenly gap-8">
     <Wrap>
+      <KyivstarIcon />
       <KyivstarNumber />
     </Wrap>
 
     <Wrap>
+      <LifeIcon />
       <LifeNumber />
     </Wrap>
 
-    <Wrap>support@hi-tech.ck.ua</Wrap>
+    <Wrap>
+      <MailIcon />
+      <a href="mailto:support@hi-tech.ck.ua">support@hi-tech.ck.ua</a>
+    </Wrap>
   </div>
 );
