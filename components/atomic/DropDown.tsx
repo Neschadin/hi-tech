@@ -39,7 +39,7 @@ export const DropDown: FC = () => {
 
   return (
     <div
-      className="relative inline-block text-lg font-semibold backdrop-blur-2xl"
+      className="relative inline-block text-lg font-semibold"
       ref={dropdownRef}
     >
       <button
