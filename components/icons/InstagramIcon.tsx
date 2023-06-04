@@ -1,4 +1,8 @@
-export const InstagramIcon = ({ className = "" }: { className?: string }) => (
+type TProps = {
+  className?: string;
+};
+
+export const InstagramIcon = ({ className = "" }: TProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
