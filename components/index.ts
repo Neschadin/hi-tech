@@ -11,5 +11,7 @@ export * from "./pageMain/Section5";
 export * from "./pageContacts/HeroContactsPage";
 export * from "./pageContacts/ContactNumbers";
 export * from "./pageContacts/Numbers";
+export * from "./pageContacts/VisitUs";
+export { GoogleMapsMarker } from "./pageContacts/GoogleMapsMarker";
 
 export * from "./Footer";
