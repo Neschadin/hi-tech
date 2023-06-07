@@ -9,7 +9,7 @@ const Wrap = ({ children }: PropsWithChildren) => (
 );
 
 export const Numbers = () => (
-  <div className="flex flex-wrap justify-evenly gap-8">
+  <div className="flex flex-wrap justify-evenly gap-8 text-xl font-medium">
     <Wrap>
       <KyivstarIcon />
       <KyivstarNumber />

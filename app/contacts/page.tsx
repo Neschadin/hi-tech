@@ -1,4 +1,4 @@
-import { ContactNumbers, HeroContactsPage } from "@/components";
+import { ContactNumbers, HeroContactsPage, VisitUs } from "@/components";
 import { Container } from "@/components/atomic";
 
 export const metadata = {
@@ -13,6 +13,8 @@ export default function Contacts() {
       <HeroContactsPage />
 
       <ContactNumbers />
+
+      <VisitUs />
     </Container>
   );
 }
