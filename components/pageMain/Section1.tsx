@@ -1,4 +1,4 @@
-import { Didact_Gothic } from "next/font/google";
+import { didactGothic } from "@/utils";
 
 import { ItemSquare, Container } from "../atomic";
 
@@ -9,23 +9,15 @@ import flashdrive from "@/public/imgMainPage/section1/flashdrive.png";
 import printer from "@/public/imgMainPage/section1/printer.png";
 import tv from "@/public/imgMainPage/section1/tv.png";
 
-
-const didactGothic = Didact_Gothic({
-  subsets: ["cyrillic"],
-  weight: "400",
-});
-
 export const Section1 = () => {
   return (
-    <section className="relative pt-5 min-h-[450px] max-w-[1920px]">
+    <section className="relative min-h-[450px] max-w-[1920px] pt-5">
       <Container className="flex-col">
-        <h2
-          className={`${didactGothic.className} text-center text-[40px] font-normal`}
-        >
+        <h2 className={`${didactGothic} text-center text-[40px] font-normal`}>
           З яким пристроєм у вас виникла проблема?
         </h2>
 
-        <div className="container flex flex-wrap justify-center gap-7 self-center my-12">
+        <div className="container my-12 flex flex-wrap justify-center gap-7 self-center">
           <ItemSquare img={iphone}>Мобільні пристрої</ItemSquare>
 
           <ItemSquare img={laptop}>Ноутбуки</ItemSquare>

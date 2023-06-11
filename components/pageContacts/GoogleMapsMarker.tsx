@@ -2,6 +2,9 @@
 
 import { useCallback, useState } from "react";
 import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
+import { mobileDetect } from "@/utils/mobileDetect";
+
+const { isMobile } = mobileDetect();
 
 const mapPosition = {
   lat: 49.43218,
@@ -14,7 +17,7 @@ const markerPosition = {
 };
 
 const mapOptions = {
-  zoomControl: true,
+  zoomControl: !isMobile,
   mapTypeControl: false,
   maxZoom: 18,
   minZoom: 13,
@@ -44,7 +47,5 @@ export const GoogleMapsMarker = () => {
     >
       <MarkerF position={markerPosition} />
     </GoogleMap>
-  ) : (
-    <></>
-  );
+  ) : null;
 };

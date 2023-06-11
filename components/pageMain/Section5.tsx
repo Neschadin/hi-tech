@@ -1,4 +1,4 @@
-import { Didact_Gothic } from "next/font/google";
+import { didactGothic } from "@/utils";
 
 import { Container, ItemRound, BgLight } from "../atomic";
 
@@ -9,11 +9,6 @@ import tv from "@/public/imgMainPage/section5/tv.png";
 import norton from "@/public/imgMainPage/section5/norton.png";
 import windows from "@/public/imgMainPage/section5/windows.png";
 
-const didactGothic = Didact_Gothic({
-  subsets: ["cyrillic"],
-  weight: "400",
-});
-
 export const Section5 = () => {
   return (
     <section className="relative min-h-[638px] max-w-[1920px] overflow-hidden">
@@ -21,7 +16,7 @@ export const Section5 = () => {
 
       <Container className="flex-col">
         <h2
-          className={`${didactGothic.className} mb-10 text-center text-[40px] font-normal`}
+          className={`${didactGothic} mb-10 text-center text-[40px] font-normal`}
         >
           Лагодимо техніку, на яку ви розраховуєте
         </h2>
@@ -33,17 +28,17 @@ export const Section5 = () => {
         </p>
 
         <div className="container mb-10 flex flex-wrap justify-center gap-7 self-center">
-          <ItemRound img={tech}>Мобільні пристрої</ItemRound>
+          <ItemRound img={tech}>Ремонт техніки</ItemRound>
 
-          <ItemRound img={pro}>Ноутбуки</ItemRound>
+          <ItemRound img={pro}>Ремонт монітора</ItemRound>
 
-          <ItemRound img={pc}>Інша техніка</ItemRound>
+          <ItemRound img={pc}>Ремонт компʼютера</ItemRound>
 
-          <ItemRound img={tv}>Принтери та МФУ</ItemRound>
+          <ItemRound img={tv}>Ремонт телевізора</ItemRound>
 
-          <ItemRound img={norton}>Відновлення даних</ItemRound>
+          <ItemRound img={norton}>Антивірусний захист</ItemRound>
 
-          <ItemRound img={windows}>Техніка Apple</ItemRound>
+          <ItemRound img={windows}>Налаштування ПО</ItemRound>
         </div>
       </Container>
     </section>

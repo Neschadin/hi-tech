@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 import { Exo_2 } from "next/font/google";
 import "./globals.css";
 
-import { Header, Footer, BackgroundOverlay } from "@/components";
+import { Header, Footer, BackgroundOverlay, Breadcrumbs } from "@/components";
 
 const exo2 = Exo_2({ subsets: ["latin", "cyrillic"] });
 
@@ -17,11 +17,14 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="uk">
       <body className={`flex flex-col ${exo2.className}`}>
+        {/* <BackgroundOverlay /> */}
+
         <Header />
 
-        {/* <BackgroundOverlay /> */}
-        <main>{children}</main>
+        <Breadcrumbs />
 
+        <main>{children}</main>
+        
         <Footer />
       </body>
     </html>
