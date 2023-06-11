@@ -1,19 +1,14 @@
-import { Didact_Gothic } from "next/font/google";
+import { didactGothic } from "@/utils";
 
 import { Button, Container } from "../atomic";
 import { VideoCards } from "./VideoCards";
-
-const didactGothic = Didact_Gothic({
-  subsets: ["cyrillic"],
-  weight: "400",
-});
 
 export const Section4 = () => {
   return (
     <section className="relative max-w-[1920px]">
       <Container className="h-auto items-center gap-16 py-5 md:h-[692px] lg:my-48 xl:gap-36">
         <div className="flex h-auto flex-col items-start gap-10">
-          <h3 className={`${didactGothic.className} text-4xl`}>
+          <h3 className={`${didactGothic} text-4xl`}>
             Магазин цифрової техніки та сервісний центр у м. Черкаси
           </h3>
 

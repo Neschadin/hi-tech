@@ -1,9 +1,4 @@
-import { Didact_Gothic } from "next/font/google";
-
-const didactGothic = Didact_Gothic({
-  subsets: ["cyrillic"],
-  weight: "400",
-});
+import { didactGothic } from "@/utils";
 
 export const HeroContactsPage = () => (
   <section
@@ -16,7 +11,7 @@ export const HeroContactsPage = () => (
 
     <div className="mx-16 flex h-[470px] max-w-[550px] flex-col justify-center text-white">
       <h1
-        className={`${didactGothic.className} text-3xl sm:text-[64px] sm:leading-[84px]`}
+        className={`${didactGothic} text-3xl sm:text-[64px] sm:leading-[84px]`}
       >
         Ми тут,
         <br />

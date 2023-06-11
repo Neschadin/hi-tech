@@ -1,17 +1,13 @@
-import { Didact_Gothic } from "next/font/google";
-import { Numbers } from "./Numbers";
+import { didactGothic } from "@/utils";
 
-const didactGothic = Didact_Gothic({
-  subsets: ["cyrillic"],
-  weight: "400",
-});
+import { Numbers } from "./Numbers";
 
 const style = "underline underline-offset-4";
 
 export const ContactNumbers = () => {
   return (
     <section className="min-h-[426px] py-5 text-center sm:py-16">
-      <h2 className={`${didactGothic.className} mb-10 text-[40px]`}>
+      <h2 className={`${didactGothic} mb-10 text-[40px]`}>
         Давайте поспілкуємося
       </h2>
 

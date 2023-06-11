@@ -1,4 +1,4 @@
-import { Didact_Gothic } from "next/font/google";
+import { didactGothic } from "@/utils";
 
 import { Container, ItemRound, BgLight } from "../atomic";
 
@@ -9,11 +9,6 @@ import tv from "@/public/imgMainPage/section5/tv.png";
 import norton from "@/public/imgMainPage/section5/norton.png";
 import windows from "@/public/imgMainPage/section5/windows.png";
 
-const didactGothic = Didact_Gothic({
-  subsets: ["cyrillic"],
-  weight: "400",
-});
-
 export const Section5 = () => {
   return (
     <section className="relative min-h-[638px] max-w-[1920px] overflow-hidden">
@@ -21,7 +16,7 @@ export const Section5 = () => {
 
       <Container className="flex-col">
         <h2
-          className={`${didactGothic.className} mb-10 text-center text-[40px] font-normal`}
+          className={`${didactGothic} mb-10 text-center text-[40px] font-normal`}
         >
           Лагодимо техніку, на яку ви розраховуєте
         </h2>

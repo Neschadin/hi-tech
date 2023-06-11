@@ -1,15 +1,11 @@
 import Image from "next/image";
-import { Didact_Gothic } from "next/font/google";
+
+import { didactGothic } from "@/utils";
 
 import { Button, Container } from "../atomic";
 import { CheckIcon } from "../icons";
 
 import img from "@/public/imgMainPage/section2/img.png";
-
-const didactGothic = Didact_Gothic({
-  subsets: ["cyrillic"],
-  weight: "400",
-});
 
 const CheckItem = ({ children }: { children: string }) => (
   <div className="inline-flex items-center gap-6 text-xl font-semibold">
@@ -29,7 +25,7 @@ export const Section2 = () => {
         />
 
         <div className="container flex max-w-[568px] flex-col items-start gap-10">
-          <h3 className={`${didactGothic.className} text-4xl`}>
+          <h3 className={`${didactGothic} text-4xl`}>
             Hi-Tech. Сервiсний центр ремонту технiки
           </h3>
 

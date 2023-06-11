@@ -1,4 +1,4 @@
-import { HeroAboutUs } from "@/components";
+import { AboutPrimary, HeroAboutUs } from "@/components";
 import { Container } from "@/components/atomic";
 
 export const metadata = {
@@ -11,6 +11,8 @@ export default function Contacts() {
   return (
     <Container className="flex-col">
       <HeroAboutUs />
+
+      <AboutPrimary />
     </Container>
   );
 }
