@@ -1,5 +1,10 @@
-import { AboutPrimary, HeroAboutUs } from "@/components";
-import { Container } from "@/components/atomic";
+import {
+  AboutPrimary,
+  HeroAboutUs,
+  Section1,
+  Specialization,
+  SpecializationDetails,
+} from "@/components";
 
 export const metadata = {
   title: "Інформація про сервісний центр Hi-Tech",
@@ -9,10 +14,16 @@ export const metadata = {
 
 export default function Contacts() {
   return (
-    <Container className="flex-col">
+    <>
       <HeroAboutUs />
 
       <AboutPrimary />
-    </Container>
+
+      <Specialization />
+
+      <SpecializationDetails />
+
+      <Section1 />
+    </>
   );
 }

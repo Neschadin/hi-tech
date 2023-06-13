@@ -16,6 +16,8 @@ export { GoogleMapsMarker } from "./pageContacts/GoogleMapsMarker";
 
 export * from "./pageAboutUs/HeroAboutUs";
 export * from "./pageAboutUs/AboutPrimary";
+export * from "./pageAboutUs/Specialization";
+export * from "./pageAboutUs/SpecializationDetails";
 
 export * from "./Footer";
 export { Breadcrumbs } from "./Breadcrumbs";
