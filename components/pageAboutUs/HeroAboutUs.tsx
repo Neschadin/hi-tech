@@ -6,7 +6,7 @@ export const HeroAboutUs = () => (
     component="section"
     className="h-[300px] items-center justify-center bg-fixed bg-top bg-no-repeat sm:h-[480px]"
     style={{
-      backgroundImage: "url('/imgAboutUsPage/heroImage.jpg')",
+      backgroundImage: "url('/imgAboutUsPage/heroPC.jpg')",
     }}
   >
     <h1
