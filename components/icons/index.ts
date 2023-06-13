@@ -4,3 +4,6 @@ export * from "./CheckIcon";
 export * from "./KyivstarIcon";
 export * from "./LifeIcon";
 export * from "./MailIcon";
+export * from "./StoreIcon";
+export * from "./ScrewDriverIcon";
+export * from "./ShoppingCart";
