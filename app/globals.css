@@ -13,7 +13,20 @@ body {
 }
 
 @layer utilities {
-  .transform-matrix {
+  /* .transform-matrix {
     transform: matrix(0, -1, -1, 0, 0, 0);
+  } */
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .block-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

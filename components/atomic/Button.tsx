@@ -17,7 +17,7 @@ export const Button: FC<TProps> = (props) => {
   } = props;
 
   const btnStyles = `
-    inline-flex justify-center items-center
+    inline-flex justify-center items-center rounded-full text-lg transition duration-200 ease-out whitespace-nowrap
     ${size === "S" ? "font-medium" : "font-semibold"}
     ${size === "S" ? "px-[22px]" : "px-[26px]"}
     ${size === "S" && "h-[36px]"}
@@ -31,9 +31,6 @@ export const Button: FC<TProps> = (props) => {
       variant === "outlined" &&
       "text-primary border-2 border-primary hover:border-blue-600 hover:text-blue-600 focus-visible:border-blue-600 active:text-blue-700 active:border-blue-700"
     }
-    rounded-full
-    text-lg
-    transition duration-200 ease-out
     ${className}
   `;
 
