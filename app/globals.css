@@ -6,10 +6,14 @@
   width: 0;
 }
 
-html,
+html {
+  /* @apply text-[62.5%];  */
+  @apply min-w-[320px];
+}
+
 body {
-  @apply hide-scrollbar h-full w-screen min-w-[320px] text-neutral-dark;
-  overflow-x: hidden;
+  @apply hide-scrollbar overflow-x-hidden text-neutral-dark;
+  @apply min-h-screen w-screen;
 }
 
 @layer utilities {
