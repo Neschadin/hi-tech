@@ -1,4 +1,5 @@
-# hi-tech.ck.ua
+# hi-tech.ck.ua 
+## (under development)
 
 ```
 Welcome!
