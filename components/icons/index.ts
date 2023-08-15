@@ -7,3 +7,4 @@ export * from "./MailIcon";
 export * from "./StoreIcon";
 export * from "./ScrewDriverIcon";
 export * from "./ShoppingCart";
+export * from "./CloseIcon";

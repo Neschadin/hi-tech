@@ -27,7 +27,7 @@ export const GoogleMapsMarker = () => {
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY || "",
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY! ,
   });
 
   const onLoad = useCallback((map: google.maps.Map) => {

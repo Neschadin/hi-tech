@@ -3,33 +3,34 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@heroicons/react": "2.0.18",
-    "@react-google-maps/api": "2.18.1",
-    "@types/node": "20.4.1",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
-    "eslint": "8.44.0",
-    "eslint-config-next": "13.4.9",
-    "next": "13.4.9",
+    "@react-google-maps/api": "2.19.2",
+    "@types/node": "20.4.5",
+    "@types/react": "18.2.16",
+    "@types/react-dom": "18.2.7",
+    "eslint": "8.47.0",
+    "eslint-config-next": "13.4.16",
+    "next": "13.4.16",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-loader-spinner": "^5.3.4",
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@types/google.maps": "^3.53.4",
-    "autoprefixer": "^10.4.14",
+    "@types/google.maps": "^3.53.6",
+    "autoprefixer": "^10.4.15",
     "eslint-plugin-googlemaps": "^1.4.15",
-    "postcss": "^8.4.25",
+    "postcss": "^8.4.27",
     "postcss-import": "^15.1.0",
-    "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.4.0",
-    "tailwindcss": "^3.3.2"
+    "prettier": "^3.0.1",
+    "prettier-plugin-tailwindcss": "^0.5.2",
+    "tailwindcss": "^3.3.3"
   },
   "browserslist": [
     "defaults"

@@ -7,7 +7,6 @@
 }
 
 html {
-  /* @apply text-[62.5%];  */
   @apply min-w-[320px];
 }
 
@@ -17,10 +16,6 @@ body {
 }
 
 @layer utilities {
-  /* .transform-matrix {
-    transform: matrix(0, -1, -1, 0, 0, 0);
-  } */
-
   .flex-center {
     display: flex;
     justify-content: center;
