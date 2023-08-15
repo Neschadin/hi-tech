@@ -18,7 +18,6 @@ export type TData = {
   };
 };
 
-
 export type TFormState = {
   fetchedData: TData;
   actNumber: string;
@@ -28,3 +27,13 @@ export type TFormState = {
   loading: boolean;
   error: any;
 };
+
+export type Action =
+  | { type: "RESET_FORM" }
+  | { type: "CHANGE_ACT_NUMBER"; payload: string }
+  | { type: "CHANGE_PHONE_NUMBER"; payload: string }
+  | { type: "SET_ACT_NUMBER_VALID"; payload: boolean }
+  | { type: "SET_PHONE_NUMBER_VALID"; payload: boolean }
+  | { type: "SET_LOADING"; payload: boolean }
+  | { type: "SET_FETCHED_DATA"; payload: TData }
+  | { type: "SET_ERROR"; payload: string };

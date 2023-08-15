@@ -109,10 +109,13 @@ export function useStatusForm() {
       };
 
       const res = await getRepairStatus(reqData);
-      if (res.status) {
-        dispatch({ type: "SET_FETCHED_DATA", payload: res });
-      } else {
+
+      if (!res) {
+        dispatch({ type: "SET_ERROR", payload: "Не вдалося виконати запит" });
+      } else if (!res.status) {
         dispatch({ type: "SET_ERROR", payload: "Документ не знайдено" });
+      } else if (res.status) {
+        dispatch({ type: "SET_FETCHED_DATA", payload: res });
       }
     } catch (error: any) {
       dispatch({ type: "SET_ERROR", payload: error.message });

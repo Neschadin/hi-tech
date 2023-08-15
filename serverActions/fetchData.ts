@@ -26,11 +26,6 @@ export async function getRepairStatus(reqData: TReqData) {
     const data = await res.json();
     return data;
   } catch (error) {
-    console.error("error!!!", error);
+    console.error(error);
   }
-}
-
-
-export async function handlerFormSubmit(data: FormData) {
-  console.log(data);
 }
