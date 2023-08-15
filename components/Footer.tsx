@@ -16,7 +16,7 @@ export const Footer = () => {
             </span>
 
             <Link
-              href={process.env.INSTA_URL || ""}
+              href={process.env.NEXT_PUBLIC_INSTA_URL!}
               className="flex items-center gap-2"
             >
               <InstagramIcon />
