@@ -28,6 +28,7 @@ export const ModalWindow = ({ handleResetForm, state }: IModal) => {
     window.addEventListener("keydown", handleEscKey);
 
     return () => window.removeEventListener("keydown", handleEscKey);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
