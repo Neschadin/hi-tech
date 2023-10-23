@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ContactNumbers, HeroContactsPage, VisitUs } from "@/components";
 import { Container } from "@/components/atomic";
 
-import bgImage from "@/public/imgContactsPage/frame.jpg";
+import bgImage from "/public/imgContactsPage/frame.jpg";
 
 export const metadata = {
   title: "Контактна інформація | Hi-Tech сервіс",
