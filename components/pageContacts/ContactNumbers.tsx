@@ -6,7 +6,7 @@ const style = "underline underline-offset-4";
 
 export const ContactNumbers = () => {
   return (
-    <section className="min-h-[426px] py-5 text-center sm:py-16">
+    <section className="min-h-[426px] py-5 text-center sm:py-16 bg-white">
       <h2 className={`${didactGothic} mb-10 text-[40px]`}>
         Давайте поспілкуємося
       </h2>

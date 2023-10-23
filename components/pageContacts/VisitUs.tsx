@@ -4,7 +4,7 @@ import { GoogleMapsMarker } from "./GoogleMapsMarker";
 
 export const VisitUs = () => {
   return (
-    <section className="relative min-h-[764px] overflow-hidden py-5 text-center sm:py-16">
+    <section className="relative min-h-[764px] overflow-hidden bg-white py-5 text-center sm:py-16">
       <BgLight />
 
       <h2 className={`${didactGothic} mb-10 text-[40px]`}>Завітайте до нас</h2>
