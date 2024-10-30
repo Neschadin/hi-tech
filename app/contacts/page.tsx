@@ -14,8 +14,10 @@ export default function Contacts() {
       <Image
         className="fixed left-1/2 top-0 -z-10 m-auto -translate-x-1/2 px-5"
         alt="bg"
-        src={"/public/imgContactsPage/frame.jpg"}
-        placeholder="blur"
+        src={"/imgContactsPage/frame.jpg"}
+        width={1408}
+        height={620}
+        style={{width:"100%"}}
       />
 
       <HeroContactsPage />
