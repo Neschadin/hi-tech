@@ -15,7 +15,7 @@ export default function Contacts() {
         className="fixed left-1/2 top-0 -z-10 m-auto -translate-x-1/2 px-5"
         alt="bg"
         src={"/imgContactsPage/frame.jpg"}
-        width={1408}
+        width={1388}
         height={620}
         style={{width:"100%"}}
       />
