@@ -17,7 +17,6 @@ export default function Contacts() {
         src={"/imgContactsPage/frame.jpg"}
         width={1388}
         height={620}
-        style={{width:"100%"}}
       />
 
       <HeroContactsPage />
