@@ -1,0 +1,5 @@
+node_modules
+.agents/*
+.next/*
+
+tsconfig.tsbuildinfo

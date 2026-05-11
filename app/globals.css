@@ -1,31 +1,80 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-.hide-scrollbar::-webkit-scrollbar {
-  width: 0;
+@theme {
+  --color-primary: oklch(62.3% 0.214 259.815);
+  --color-divider: #999999;
+  --color-divider-light: #cccccc;
+  --color-input-light: #b3b3b3;
+  --color-light-bg: oklch(96.7% 0.003 264.542);
+  --color-text-on-white: #3b3b3b;
+  --color-dark-blue: #226cd1;
+
+  --color-neutral-grey: #666666;
+  --color-neutral-dark: #2b2b2b;
+  --color-neutral-menu-one: #3c4043;
+
+  --max-width-cont: 1428px;
+
+  --shadow-round: 0px 2px 44px rgba(0, 0, 0, 0.2);
+  --shadow-without-top: 0px 2px 44px rgba(0, 0, 0, 0.2) 0px 0px 0px 1px
+    transparent;
+
+  --font-body-small: 'Exo_2', sans-serif;
+
+  --text-h2: 56px;
+  --text-body-small: 16px;
+
+  --font-weight-h2: 400;
+  --font-weight-body-small: 500;
+
+  --leading-h2: 56px;
+  --leading-body-small: 24px;
 }
 
-html {
-  @apply min-w-[320px];
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-body {
-  @apply hide-scrollbar overflow-x-hidden text-neutral-dark;
-  @apply min-h-screen w-screen;
+@utility hide-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
-@layer utilities {
-  .flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@utility flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@utility block-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@layer base {
+  html {
+    @apply min-w-[320px];
   }
 
-  .block-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  body {
+    @apply hide-scrollbar overflow-x-hidden text-neutral-dark;
+    @apply min-h-screen w-screen;
   }
 }

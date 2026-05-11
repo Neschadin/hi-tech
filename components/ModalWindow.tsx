@@ -1,8 +1,8 @@
 import { TFormState } from "@/types";
 import { CloseIcon } from "./icons";
 import { MouseEvent, useEffect } from "react";
-import { ProgressBar } from "react-loader-spinner";
 import { formatPhoneNumber } from "@/utils/validators";
+import { Spinner } from "./Spinner";
 
 interface IModal {
   handleResetForm: () => void;
@@ -18,6 +18,7 @@ export const ModalWindow = ({ handleResetForm, state }: IModal) => {
     }
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: only attach key listener on mount; handleResetForm is stable for this UI
   useEffect(() => {
     const handleEscKey = (e: KeyboardEvent) => {
       if (e.key === "Escape" || e.key === "Esc") {
@@ -28,7 +29,6 @@ export const ModalWindow = ({ handleResetForm, state }: IModal) => {
     window.addEventListener("keydown", handleEscKey);
 
     return () => window.removeEventListener("keydown", handleEscKey);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -37,13 +37,9 @@ export const ModalWindow = ({ handleResetForm, state }: IModal) => {
       className="fixed left-0 top-0 z-50 h-screen w-screen bg-slate-900 bg-opacity-50 backdrop-blur-lg backdrop-filter"
     >
       {loading ? (
-        <ProgressBar
-          height="80"
-          width="80"
-          wrapperClass="block-center"
-          borderColor="white"
-          barColor="#3b82f6"
-        />
+        <div className="block-center">
+          <Spinner />
+        </div>
       ) : (
         <div
           className={`block-center absolute m-auto min-w-fit rounded-md bg-neutral-100 px-8 py-16 ${

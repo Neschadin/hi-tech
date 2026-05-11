@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { siteConfig } from "@/config/site";
 
 import { Container } from "./atomic";
 import { InstagramIcon } from "./icons";
@@ -12,16 +12,18 @@ export const Footer = () => {
             <p className="text-2xl font-bold">Hi-Tech</p>
 
             <span className="text-sm">
-              {"Магазин цифрової техніки та сервісний центр у м.Черкаси"}
+              Магазин цифрової техніки та сервісний центр у м.Черкаси
             </span>
 
-            <Link
-              href={process.env.NEXT_PUBLIC_INSTA_URL!}
+            <a
+              href={siteConfig.social.instagram}
+              target="_blank"
+              rel="noreferrer"
               className="flex items-center gap-2"
             >
               <InstagramIcon />
               <span className="text-sm">Instagram</span>
-            </Link>
+            </a>
           </div>
 
           <div className="grid w-[328px] grid-cols-1 grid-rows-3 gap-x-8 gap-y-4 font-medium sm:ml-[20%] md:grid-cols-3">
@@ -47,7 +49,10 @@ export const Footer = () => {
         <hr className="mb-2 mt-10 border-divider" />
 
         <div className="flex flex-col items-center justify-between text-center text-sm font-semibold sm:flex-row md:gap-10">
-          <span>{"© ТОВ «Хай-Тек Трейд», 2023. Всі права захищені."}</span>
+          <span>
+            © ТОВ "Хай-Тек Трейд", {new Date().getFullYear()}. Всі права
+            захищені.
+          </span>
           <span className="md:ml-auto">Політика конфіденційності </span>
           <span>Умови користування </span>
         </div>
