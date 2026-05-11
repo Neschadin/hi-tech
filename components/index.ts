@@ -22,3 +22,5 @@ export * from "./pageAboutUs/SpecializationDetails";
 
 export * from "./Footer";
 export { Breadcrumbs } from "./Breadcrumbs";
+
+export * from "./landing";

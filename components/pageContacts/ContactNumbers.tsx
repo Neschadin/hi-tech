@@ -14,7 +14,7 @@ export const ContactNumbers = () => {
       <div className="mx-auto mb-20 max-w-[846px] text-xl font-medium">
         Бажаєте зв’язатися по телефону? Звичайно. Наші експерти готові допомогти
         з понеділка по п’ятницю – з <span className={style}>09:00</span> до{" "}
-        <span className={style}>17:00</span> та у суботу - з{" "}
+        <span className={style}>18:00</span> та у суботу - з{" "}
         <span className={style}>10:00</span> до{" "}
         <span className={style}>16:00</span>.
       </div>

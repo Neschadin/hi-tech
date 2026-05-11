@@ -4,10 +4,6 @@ import { FC, useEffect, useRef, useState } from "react";
 import { ChevronDownIcon } from "../icons";
 import { KyivstarNumber, LifeNumber } from "./PhoneNumbers";
 
-// function classNames(...classes: string[]) {
-//   return classes.filter(Boolean).join(" ");
-// }
-
 export const DropDown: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -43,10 +39,17 @@ export const DropDown: FC = () => {
       ref={dropdownRef}
     >
       <button
+        type="button"
         className="relative z-10 inline-flex h-[42px] w-full min-w-min items-center justify-center gap-x-2 rounded-full bg-white px-[26px] shadow-sm ring-[1.5px] ring-inset ring-neutral-grey hover:ring-neutral-dark"
         onClick={toggleMenu}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
       >
-        <a href="tel:0472383880" className="inline-flex gap-x-2">
+        <a
+          href="tel:0630257777"
+          className="inline-flex gap-x-2"
+          onClick={(e) => e.stopPropagation()}
+        >
           <span className="text-neutral-grey">063</span>
           <span className="whitespace-nowrap">025-77-77</span>
         </a>

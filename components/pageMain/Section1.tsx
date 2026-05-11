@@ -18,17 +18,29 @@ export const Section1 = () => {
         </h2>
 
         <div className="container my-12 flex flex-wrap justify-center gap-7 self-center">
-          <ItemSquare img={iphone}>Мобільні пристрої</ItemSquare>
+          <ItemSquare img={iphone} href="/contacts">
+            Мобільні пристрої
+          </ItemSquare>
 
-          <ItemSquare img={laptop}>Ноутбуки</ItemSquare>
+          <ItemSquare img={laptop} href="/services/noutbuky">
+            Ноутбуки
+          </ItemSquare>
 
-          <ItemSquare img={tv}>Інша техніка</ItemSquare>
+          <ItemSquare img={tv} href="/contacts">
+            Інша техніка
+          </ItemSquare>
 
-          <ItemSquare img={printer}>Принтери та МФУ</ItemSquare>
+          <ItemSquare img={printer} href="/services/printery-mfu">
+            Принтери та МФУ
+          </ItemSquare>
 
-          <ItemSquare img={flashdrive}>Відновлення даних</ItemSquare>
+          <ItemSquare img={flashdrive} href="/contacts">
+            Відновлення даних
+          </ItemSquare>
 
-          <ItemSquare img={apple}>Техніка Apple</ItemSquare>
+          <ItemSquare img={apple} href="/contacts">
+            Техніка Apple
+          </ItemSquare>
         </div>
       </Container>
     </section>

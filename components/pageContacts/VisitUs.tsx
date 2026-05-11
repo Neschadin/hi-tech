@@ -1,6 +1,11 @@
 import { didactGothic } from "@/utils";
+import { site } from "@/lib/content/site";
 import { BgLight } from "../atomic";
 import { GoogleMapsMarker } from "./GoogleMapsMarker";
+
+const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `${site.address.streetAddress}, ${site.address.addressLocality}`
+)}`;
 
 export const VisitUs = () => {
   return (
@@ -12,8 +17,13 @@ export const VisitUs = () => {
       <div className="mx-auto mb-20 max-w-[846px] text-xl font-medium">
         Немає нічого кращого, ніж спілкування наживо. Запрошуємо вас за адресою
         <br />
-        <a href="#" className="text-primary underline">
-          м.Черкаси, вул. Сумгаїтська 24/1
+        <a
+          href={mapsHref}
+          target="_blank"
+          rel="noreferrer"
+          className="text-primary underline"
+        >
+          м. Черкаси, {site.address.streetAddress}
         </a>
       </div>
 
