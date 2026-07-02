@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
 import hillOfGlory from "@/public/imgAboutUsPage/hillOfGlory.jpg";
-import { Container } from "../atomic";
+import { Container } from "../atomic/Container";
 
 export const AboutPrimary = () => (
   <Container component="section">

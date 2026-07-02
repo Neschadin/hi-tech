@@ -1,8 +1,8 @@
 import { TFormState } from "@/types";
-import { CloseIcon } from "./icons";
+import { CloseIcon } from "./icons/CloseIcon";
 import { MouseEvent, useEffect } from "react";
-import { ProgressBar } from "react-loader-spinner";
 import { formatPhoneNumber } from "@/utils/validators";
+import { Spinner } from "./Spinner";
 
 interface IModal {
   handleResetForm: () => void;
@@ -18,6 +18,7 @@ export const ModalWindow = ({ handleResetForm, state }: IModal) => {
     }
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: only attach key listener on mount; handleResetForm is stable for this UI
   useEffect(() => {
     const handleEscKey = (e: KeyboardEvent) => {
       if (e.key === "Escape" || e.key === "Esc") {
@@ -28,38 +29,39 @@ export const ModalWindow = ({ handleResetForm, state }: IModal) => {
     window.addEventListener("keydown", handleEscKey);
 
     return () => window.removeEventListener("keydown", handleEscKey);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div
+      role="presentation"
       onClick={handleBackdropClick}
-      className="fixed left-0 top-0 z-50 h-screen w-screen bg-slate-900 bg-opacity-50 backdrop-blur-lg backdrop-filter"
+      className="fixed left-0 top-0 z-50 h-screen w-screen bg-slate-900/50 backdrop-blur-lg backdrop-filter"
     >
       {loading ? (
-        <ProgressBar
-          height="80"
-          width="80"
-          wrapperClass="block-center"
-          borderColor="white"
-          barColor="#3b82f6"
-        />
+        <div className="block-center">
+          <Spinner />
+        </div>
       ) : (
         <div
-          className={`block-center absolute m-auto min-w-fit rounded-md bg-neutral-100 px-8 py-16 ${
+          className={`block-center absolute m-auto max-h-[90vh] min-w-[min(100vw-2rem,420px)] max-w-lg overflow-y-auto rounded-2xl bg-neutral-100 px-6 py-14 shadow-xl md:px-10 ${
             error ? "border-2 border-red-500" : ""
           }`}
         >
           <div className="absolute right-4 top-4">
-            <button onClick={handleResetForm}>
+            <button
+              type="button"
+              aria-label="Закрити"
+              className="rounded-full p-2 text-neutral-dark hover:bg-white/80"
+              onClick={handleResetForm}
+            >
               <CloseIcon size="M" />
             </button>
           </div>
 
           {fetchedData?.data && (
-            <div className="flex flex-col gap-3">
-              <h2 className="mb-4 text-center text-xl font-medium">
-                Стан звернення до СЦ
+            <div className="flex flex-col gap-3 text-left text-base">
+              <h2 className="mb-2 text-center text-xl font-semibold">
+                Стан звернення до сервісного центру
               </h2>
 
               <p>
@@ -105,7 +107,7 @@ export const ModalWindow = ({ handleResetForm, state }: IModal) => {
               </p>
 
               <p>
-                с/н:
+                Серійний номер:
                 <span className="ml-2 font-semibold">
                   {fetchedData.data.serialNumber}
                 </span>
@@ -114,7 +116,7 @@ export const ModalWindow = ({ handleResetForm, state }: IModal) => {
               <p>
                 Вартість:
                 <span className="ml-2 font-semibold">
-                  {fetchedData.data.cost}грн.
+                  {fetchedData.data.cost} грн
                 </span>
               </p>
 
@@ -137,12 +139,12 @@ export const ModalWindow = ({ handleResetForm, state }: IModal) => {
               <p>
                 Результат ремонту:
                 <span className="ml-2 font-semibold">
-                  {fetchedData.data.repairResult ? "Успішно" : "Не успішно"}
+                  {fetchedData.data.repairResult ? "Успішно" : "Неуспішно"}
                 </span>
               </p>
 
               <p>
-                Склад рабіт:
+                Склад робіт:
                 <span className="ml-2 font-semibold">
                   {fetchedData.data.worksContent}
                 </span>
@@ -151,7 +153,7 @@ export const ModalWindow = ({ handleResetForm, state }: IModal) => {
           )}
 
           {error && (
-            <h2 className="mb-2 ml-2 text-xl font-semibold">
+            <h2 className="mb-2 text-center text-xl font-semibold">
               Помилка: {error}
             </h2>
           )}

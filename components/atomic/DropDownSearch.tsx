@@ -1,67 +1,113 @@
 "use client";
 
 import { FC, useEffect, useRef, useState } from "react";
-import { ChevronDownIcon } from "../icons";
-import { Button } from "./Button";
-import { DropDownMenu } from "./DropDownMenu";
+import Link from "next/link";
 
-// function classNames(...classes: string[]) {
-//   return classes.filter(Boolean).join(" ");
-// }
+import { serviceMenuGroups } from "@/lib/content/services";
+
+import { ChevronDownIcon } from "../icons/ChevronDownIcon";
 
 export const DropDownSearch: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((o) => !o);
   };
 
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
-
-  const handleOutsideClick = (event: MouseEvent) => {
+  const closeMenu = (event: FocusEvent | MouseEvent) => {
     dropdownRef.current &&
       !dropdownRef.current.contains(event.target as Node) &&
       setIsOpen(false);
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: only attach key listener on mount; handleResetForm is stable for this UI
   useEffect(() => {
-    document.addEventListener("mousedown", handleOutsideClick);
+    if (isOpen) {
+      document.addEventListener("mousedown", closeMenu);
+      document.addEventListener("focusin", closeMenu);
+    } else {
+      document.removeEventListener("mousedown", closeMenu);
+      document.removeEventListener("focusin", closeMenu);
+    }
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("mousedown", closeMenu);
+      document.removeEventListener("focusin", closeMenu);
     };
-  }, []);
+  }, [isOpen]);
 
   return (
     <div
-      className="relative z-10 mt-auto h-[60px] w-full max-w-[686px] rounded-full text-lg font-semibold"
+      className="relative z-10 mt-auto w-full max-w-[686px] rounded-full text-base font-semibold md:text-lg"
       ref={dropdownRef}
     >
       <div
-        className={`absolute top-0 flex h-[1064px] w-full origin-top transform flex-col items-start gap-4 rounded-[30px] bg-white px-4 py-7 pb-10 pt-[60px] shadow-xl transition focus:outline-none ${
+        className={`absolute top-0 z-20 w-full origin-top transform overflow-hidden rounded-[30px] bg-white shadow-xl transition ${
           isOpen
-            ? "scale-y-100 opacity-100 duration-100 ease-out"
-            : "invisible h-0 scale-y-90 opacity-0 duration-75 ease-in"
+            ? "max-h-[min(75vh,920px)] scale-y-100 opacity-100 duration-150 ease-out"
+            : "pointer-events-none max-h-0 scale-y-95 opacity-0 duration-100 ease-in"
         }`}
       >
-        <DropDownMenu />
+        <div className="max-h-[min(75vh,920px)] overflow-y-auto px-4 pb-6 pt-[72px]">
+          <div className="flex flex-col gap-8">
+            {serviceMenuGroups.map((group) => (
+              <div
+                key={group.id}
+                className="border-b border-divider-light pb-6 last:border-0"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <Link
+                    href={group.href}
+                    className="text-lg font-bold text-neutral-dark hover:text-primary"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {group.title}
+                  </Link>
+                  <Link
+                    href={group.href}
+                    className="text-sm font-semibold text-primary hover:underline"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    До категорії →
+                  </Link>
+                </div>
+                <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  {group.items.map((item) => (
+                    <Link
+                      key={`${item.href}-${item.label}`}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="flex min-h-10 items-center rounded-lg border border-divider-light px-4 py-2 text-base font-medium text-gray-700 transition hover:bg-gray-100"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className="relative mt-auto flex h-[60px] w-full items-center justify-between rounded-full bg-white text-lg font-semibold shadow-round">
+      <div className="relative flex min-h-[60px] w-full items-center justify-between rounded-full bg-white shadow-round">
         <button
-          className="relative ml-[28px] inline-flex items-center justify-center gap-x-2"
+          type="button"
+          className="relative z-10 ml-4 inline-flex min-h-11 flex-1 items-center justify-start gap-x-2 py-2 text-left md:ml-7"
           onClick={toggleMenu}
-          onBlur={closeMenu}
+          aria-expanded={isOpen}
+          aria-haspopup="true"
         >
           <span className="whitespace-nowrap">Оберіть сферу допомоги</span>
           <ChevronDownIcon open={isOpen} />
         </button>
 
-        <Button size="L" className="mr-[6px]">
+        <Link
+          href="/services/noutbuky"
+          onClick={() => setIsOpen(false)}
+          className="relative z-10 mr-1 inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-blue-500 px-5 text-base font-semibold text-white transition hover:bg-blue-600 md:mr-[6px] md:px-7"
+        >
           Дізнатися деталі
-        </Button>
+        </Link>
       </div>
     </div>
   );

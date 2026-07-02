@@ -1,4 +1,4 @@
-import { CheckIcon } from "../icons";
+import { CheckIcon } from "../icons/CheckIcon";
 
 export const CheckItem = ({ children }: { children: string }) => (
   <div className="inline-flex items-center gap-6 text-xl font-semibold">

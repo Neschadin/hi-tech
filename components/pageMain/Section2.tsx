@@ -1,9 +1,10 @@
 import Image from "next/image";
 
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
-import { Button, Container } from "../atomic";
-import { CheckIcon } from "../icons";
+import { Button } from "../atomic/Button";
+import { Container } from "../atomic/Container";
+import { CheckIcon } from "../icons/CheckIcon";
 
 import img from "@/public/imgMainPage/section2/img.png";
 

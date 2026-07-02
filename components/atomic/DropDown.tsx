@@ -1,12 +1,11 @@
 "use client";
 
 import { FC, useEffect, useRef, useState } from "react";
-import { ChevronDownIcon } from "../icons";
+import { ChevronDownIcon } from "../icons/ChevronDownIcon";
+import { phoneHref, site } from "@/lib/content/site";
 import { KyivstarNumber, LifeNumber } from "./PhoneNumbers";
 
-// function classNames(...classes: string[]) {
-//   return classes.filter(Boolean).join(" ");
-// }
+const vodafone = site.phones.find((phone) => phone.id === "vodafone")!;
 
 export const DropDown: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +21,7 @@ export const DropDown: FC = () => {
       setIsOpen(false);
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: only attach key listener on mount; handleResetForm is stable for this UI
   useEffect(() => {
     if (isOpen) {
       document.addEventListener("mousedown", closeMenu);
@@ -43,12 +43,21 @@ export const DropDown: FC = () => {
       ref={dropdownRef}
     >
       <button
+        type="button"
         className="relative z-10 inline-flex h-[42px] w-full min-w-min items-center justify-center gap-x-2 rounded-full bg-white px-[26px] shadow-sm ring-[1.5px] ring-inset ring-neutral-grey hover:ring-neutral-dark"
         onClick={toggleMenu}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
       >
-        <a href="tel:0472383880" className="inline-flex gap-x-2">
-          <span className="text-neutral-grey">063</span>
-          <span className="whitespace-nowrap">025-77-77</span>
+        <a
+          href={phoneHref(vodafone.tel)}
+          className="inline-flex gap-x-2"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <span className="text-neutral-grey">{vodafone.tel.slice(4, 6)}</span>
+          <span className="whitespace-nowrap">
+            {vodafone.display.replace(/^\(\d{3}\)\s*/, "")}
+          </span>
         </a>
         <ChevronDownIcon open={isOpen} />
       </button>

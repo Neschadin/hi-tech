@@ -1,10 +1,11 @@
-import { FocusEvent, FormEvent, useEffect, useReducer } from "react";
-import { getRepairStatus } from "@/serverActions/fetchData";
+"use client";
+
+import { FocusEvent, SubmitEvent, useReducer } from "react";
 
 import {
   isValidActNumber,
   isValidPhoneNumber,
-  phoneNumberCleaner,
+  phoneNumberCleaner
 } from "@/utils/validators";
 
 import { TFormState } from "@/types";
@@ -16,7 +17,7 @@ const initialState = {
   actNumberValid: true,
   phoneNumberValid: true,
   loading: false,
-  error: null,
+  error: null
 };
 
 function reducer(state: TFormState, action: any) {
@@ -77,18 +78,18 @@ export function useStatusForm() {
       state.actNumber &&
         dispatch({
           type: "SET_ACT_NUMBER_VALID",
-          payload: isValidActNumber(state.actNumber),
+          payload: isValidActNumber(state.actNumber)
         });
     } else {
       state.phoneNumber &&
         dispatch({
           type: "SET_PHONE_NUMBER_VALID",
-          payload: isValidPhoneNumber(state.phoneNumber),
+          payload: isValidPhoneNumber(state.phoneNumber)
         });
     }
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: SubmitEvent) => {
     e.preventDefault();
 
     if (
@@ -105,20 +106,39 @@ export function useStatusForm() {
     try {
       const reqData = {
         actNumber: state.actNumber,
-        phoneNumber: phoneNumberCleaner(state.phoneNumber),
+        phoneNumber: phoneNumberCleaner(state.phoneNumber)
       };
 
-      const res = await getRepairStatus(reqData);
+      const statusApi =
+        process.env.NEXT_PUBLIC_REPAIR_STATUS_API ?? "/api/repair-status";
 
-      if (!res) {
-        dispatch({ type: "SET_ERROR", payload: "Не вдалося виконати запит" });
-      } else if (!res.status) {
-        dispatch({ type: "SET_ERROR", payload: "Документ не знайдено" });
-      } else if (res.status) {
-        dispatch({ type: "SET_FETCHED_DATA", payload: res });
+      const response = await fetch(statusApi, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(reqData)
+      });
+
+      if (!response.ok) {
+        dispatch({
+          type: "SET_ERROR",
+          payload: `Помилка сервера (${response.status})`
+        });
+        return;
       }
-    } catch (error: any) {
-      dispatch({ type: "SET_ERROR", payload: error.message });
+
+      const data = await response.json();
+
+      if (!data?.status) {
+        dispatch({ type: "SET_ERROR", payload: "Документ не знайдено" });
+      } else {
+        dispatch({ type: "SET_FETCHED_DATA", payload: data });
+      }
+    } catch (error) {
+      dispatch({
+        type: "SET_ERROR",
+        payload:
+          error instanceof Error ? error.message : "Непередбачувана помилка"
+      });
     } finally {
       dispatch({ type: "SET_LOADING", payload: false });
     }
@@ -129,6 +149,6 @@ export function useStatusForm() {
     handleResetForm,
     handleChange,
     handleBlur,
-    handleSubmit,
+    handleSubmit
   };
 }

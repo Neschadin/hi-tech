@@ -1,6 +1,8 @@
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
-import { Container, ItemRound, BgLight } from "../atomic";
+import { Container } from "../atomic/Container";
+import { ItemRound } from "../atomic/ItemRound";
+import { BgLight } from "../atomic/BgLight";
 
 import tech from "@/public/imgMainPage/section5/tech.png";
 import pro from "@/public/imgMainPage/section5/pro.png";

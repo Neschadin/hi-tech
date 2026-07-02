@@ -1,0 +1,19 @@
+.cursor/
+!.cursor/mcp.json.example
+
+node_modules
+.agents/*
+.next/*
+
+tsconfig.tsbuildinfo
+
+.env*
+# OpenNext
+.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+
+!.env.example

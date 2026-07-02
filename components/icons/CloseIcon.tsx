@@ -1,22 +1,22 @@
-import { SVGProps } from 'react';
+import { SVGProps } from "react";
 
 interface Props extends SVGProps<SVGSVGElement> {
-  size?: 'S' | 'M' | 'L';
+  size?: "S" | "M" | "L";
 }
 
 const dimensions = {
   S: 24,
   M: 32,
-  L: 44,
+  L: 44
 };
 
 const strokeW = {
   S: 3,
   M: 2,
-  L: undefined,
+  L: undefined
 };
 
-export const CloseIcon = ({ size = 'L', ...props }: Props) => {
+export const CloseIcon = ({ size = "L", ...props }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

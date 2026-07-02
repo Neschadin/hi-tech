@@ -1,12 +1,12 @@
-import { didactGothic } from "@/utils";
-import { Container } from "../atomic";
+import { didactGothic } from "@/utils/fontDidactGothic";
+import { Container } from "../atomic/Container";
 
 export const HeroAboutUs = () => (
   <Container
     component="section"
     className="h-[300px] items-center justify-center bg-fixed bg-top bg-no-repeat sm:h-[480px]"
     style={{
-      backgroundImage: "url('/imgAboutUsPage/heroPC.jpg')",
+      backgroundImage: "url('/imgAboutUsPage/heroPC.jpg')"
     }}
   >
     <h1

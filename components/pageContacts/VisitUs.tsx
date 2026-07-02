@@ -1,5 +1,6 @@
-import { didactGothic } from "@/utils";
-import { BgLight } from "../atomic";
+import { didactGothic } from "@/utils/fontDidactGothic";
+import { site } from "@/lib/content/site";
+import { BgLight } from "../atomic/BgLight";
 import { GoogleMapsMarker } from "./GoogleMapsMarker";
 
 export const VisitUs = () => {
@@ -12,8 +13,13 @@ export const VisitUs = () => {
       <div className="mx-auto mb-20 max-w-[846px] text-xl font-medium">
         Немає нічого кращого, ніж спілкування наживо. Запрошуємо вас за адресою
         <br />
-        <a href="#" className="text-primary underline">
-          м.Черкаси, вул. Сумгаїтська 24/1
+        <a
+          href={site.maps.url}
+          target="_blank"
+          rel="noreferrer"
+          className="text-primary underline"
+        >
+          м. {site.address.addressLocality}, {site.address.streetAddress}
         </a>
       </div>
 

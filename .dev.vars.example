@@ -1,0 +1,11 @@
+NEXTJS_ENV=development
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=
+# Optional: for workers.dev without custom domain route
+# NEXT_PUBLIC_REPAIR_STATUS_API=https://hi-tech-status-proxy.<account>.workers.dev
+# GitHub Actions secrets (repo settings):
+# CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+# Worker runtime secrets (wrangler secret put on hi-tech-status-proxy):
+# Workers cannot fetch() raw IPs — use hostname (A record, DNS only)
+ONEC_URL=http://onec.hi-tech.ck.ua:38380/mb/hs/exchange_hi_tech/data_service
+ONEC_USER=
+ONEC_PASS=

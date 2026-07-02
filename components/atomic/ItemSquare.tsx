@@ -2,7 +2,7 @@ import { FC } from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
-import { ChevronDownIcon } from "../icons";
+import { ChevronDownIcon } from "../icons/ChevronDownIcon";
 
 type TProps = {
   className?: string;
@@ -15,7 +15,7 @@ export const ItemSquare: FC<TProps> = ({
   children,
   className = "",
   img,
-  href = "#",
+  href = "#"
 }) => (
   <div
     className={`relative flex h-[188px] w-[208px] flex-col items-center justify-between gap-4 rounded-lg border border-gray-300 py-4 ${className}`}

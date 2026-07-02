@@ -1,17 +1,14 @@
-import { didactGothic } from "@/utils";
-
+import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const HeroContactsPage = () => (
   <>
-
     <section
       className="relative"
       // className="bg-fixed bg-top bg-no-repeat"
       // style={{
-        //   backgroundImage: "url('/imgContactsPage/frame.jpg')",
+      //   backgroundImage: "url('/imgContactsPage/frame.jpg')",
       // }}
     >
- 
       {/* <div className="h-[150px] w-full bg-white"></div> */}
 
       <div className="mx-16 flex h-[470px] max-w-[550px] flex-col justify-center text-white">
