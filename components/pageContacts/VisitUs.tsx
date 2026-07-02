@@ -1,5 +1,5 @@
-import { didactGothic } from "@/utils/fontDidactGothic";
 import { site } from "@/lib/content/site";
+import { didactGothic } from "@/utils/fontDidactGothic";
 import { BgLight } from "../atomic/BgLight";
 import { GoogleMapsMarker } from "./GoogleMapsMarker";
 

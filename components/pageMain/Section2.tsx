@@ -1,12 +1,9 @@
 import Image from "next/image";
-
+import img from "@/public/imgMainPage/section2/img.png";
 import { didactGothic } from "@/utils/fontDidactGothic";
-
 import { Button } from "../atomic/Button";
 import { Container } from "../atomic/Container";
 import { CheckIcon } from "../icons/CheckIcon";
-
-import img from "@/public/imgMainPage/section2/img.png";
 
 const CheckItem = ({ children }: { children: string }) => (
   <div className="inline-flex items-center gap-6 text-xl font-semibold">

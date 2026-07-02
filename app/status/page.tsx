@@ -1,7 +1,7 @@
 "use client";
 
-import { ModalWindow } from "@/components/ModalWindow";
 import { Container } from "@/components/atomic/Container";
+import { ModalWindow } from "@/components/ModalWindow";
 import { useStatusForm } from "@/hooks/useStatusForm";
 import { didactGothic } from "@/utils/fontDidactGothic";
 

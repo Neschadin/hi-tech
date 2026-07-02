@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/atomic/Container";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getAllServiceSlugs, getServiceBySlug } from "@/lib/content/services";
-import { site, phoneHref } from "@/lib/content/site";
+import { phoneHref, site } from "@/lib/content/site";
 import { didactGothic } from "@/utils/fontDidactGothic";
 
 type Props = { params: Promise<{ slug: string }> };

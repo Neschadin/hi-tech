@@ -1,7 +1,6 @@
 import { PropsWithChildren } from "react";
-
-import { Container } from "../atomic/Container";
 import { didactGothic } from "@/utils/fontDidactGothic";
+import { Container } from "../atomic/Container";
 
 import { ScrewDriverIcon } from "../icons/ScrewDriverIcon";
 import { ShoppingCart } from "../icons/ShoppingCart";

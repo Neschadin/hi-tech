@@ -1,15 +1,13 @@
+import norton from "@/public/imgMainPage/section5/norton.png";
+import pc from "@/public/imgMainPage/section5/pc.png";
+import pro from "@/public/imgMainPage/section5/pro.png";
+import tech from "@/public/imgMainPage/section5/tech.png";
+import tv from "@/public/imgMainPage/section5/tv.png";
+import windows from "@/public/imgMainPage/section5/windows.png";
 import { didactGothic } from "@/utils/fontDidactGothic";
-
+import { BgLight } from "../atomic/BgLight";
 import { Container } from "../atomic/Container";
 import { ItemRound } from "../atomic/ItemRound";
-import { BgLight } from "../atomic/BgLight";
-
-import tech from "@/public/imgMainPage/section5/tech.png";
-import pro from "@/public/imgMainPage/section5/pro.png";
-import pc from "@/public/imgMainPage/section5/pc.png";
-import tv from "@/public/imgMainPage/section5/tv.png";
-import norton from "@/public/imgMainPage/section5/norton.png";
-import windows from "@/public/imgMainPage/section5/windows.png";
 
 export const Section5 = () => {
   return (

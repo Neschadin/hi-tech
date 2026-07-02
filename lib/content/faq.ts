@@ -1,5 +1,5 @@
-import type { FaqItem } from "./types";
 import { visitAddressLine } from "./site";
+import type { FaqItem } from "./types";
 
 export const homeFaq: FaqItem[] = [
   {

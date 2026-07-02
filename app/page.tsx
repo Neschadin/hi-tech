@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { LandingAdvantages } from "@/components/landing/LandingAdvantages";
 import { LandingCta } from "@/components/landing/LandingCta";
 import { LandingFaq } from "@/components/landing/LandingFaq";
@@ -9,7 +10,6 @@ import { LandingPriority } from "@/components/landing/LandingPriority";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { homeFaq } from "@/lib/content/faq";
 import { localBusinessJsonLd, site } from "@/lib/content/site";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: site.url }

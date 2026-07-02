@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { PropsWithChildren } from "react";
 import { Exo_2 } from "next/font/google";
+import { PropsWithChildren } from "react";
 import "./globals.css";
 
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { site } from "@/lib/content/site";
 
 const exo2 = Exo_2({ subsets: ["latin", "cyrillic"] });

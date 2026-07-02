@@ -1,5 +1,5 @@
-import { didactGothic } from "@/utils/fontDidactGothic";
 import { hoursDisplay } from "@/lib/content/site";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
 import { Numbers } from "./Numbers";
 

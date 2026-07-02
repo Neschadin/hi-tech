@@ -1,7 +1,7 @@
 "use client";
 
+import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
 import { useCallback, useState } from "react";
-import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
 import { mapCenter, markerPosition } from "@/lib/content/site";
 import { mobileDetect } from "@/utils/mobileDetect";
 

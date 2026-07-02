@@ -1,6 +1,6 @@
-import { FC } from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import { FC } from "react";
 
 import { ChevronDownIcon } from "../icons/ChevronDownIcon";
 

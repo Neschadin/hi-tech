@@ -1,9 +1,9 @@
 import { PropsWithChildren } from "react";
+import { site } from "@/lib/content/site";
 import { KyivstarNumber, LifeNumber } from "../atomic/PhoneNumbers";
 import { KyivstarIcon } from "../icons/KyivstarIcon";
 import { LifeIcon } from "../icons/LifeIcon";
 import { MailIcon } from "../icons/MailIcon";
-import { site } from "@/lib/content/site";
 
 const Wrap = ({ children }: PropsWithChildren) => (
   <div className="flex h-16 w-[328px] items-center justify-center gap-4 rounded-lg border border-input-light">

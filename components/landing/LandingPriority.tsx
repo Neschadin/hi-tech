@@ -1,11 +1,9 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-
+import { Container } from "@/components/atomic/Container";
 import laptop from "@/public/imgMainPage/section1/laptop.png";
 import printer from "@/public/imgMainPage/section1/printer.png";
 import { LogoLenovo } from "@/public/imgMainPage/section3/LogoLenovo";
-
-import { Container } from "@/components/atomic/Container";
 import { didactGothic } from "@/utils/fontDidactGothic";
 
 type Card = {

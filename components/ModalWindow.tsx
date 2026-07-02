@@ -1,7 +1,7 @@
-import { TFormState } from "@/types";
-import { CloseIcon } from "./icons/CloseIcon";
 import { MouseEvent, useEffect } from "react";
+import { TFormState } from "@/types";
 import { formatPhoneNumber } from "@/utils/validators";
+import { CloseIcon } from "./icons/CloseIcon";
 import { Spinner } from "./Spinner";
 
 interface IModal {

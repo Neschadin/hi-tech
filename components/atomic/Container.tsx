@@ -1,4 +1,4 @@
-import type { CSSProperties, FC, PropsWithChildren, JSX } from "react";
+import type { CSSProperties, FC, JSX, PropsWithChildren } from "react";
 
 type TProps = PropsWithChildren & {
   className?: string;

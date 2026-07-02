@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "biome lint",
     "format": "biome format --write",
-    "check": "biome check",
+    "check": "biome ci",
     "ts-check": "tsc --project tsconfig.json --pretty --noEmit && echo ",
     "dev:status-proxy": "wrangler dev --config workers/status-proxy/wrangler.jsonc --port 8787",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",

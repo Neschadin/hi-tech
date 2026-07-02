@@ -1,5 +1,5 @@
-import { didactGothic } from "@/utils/fontDidactGothic";
 import { site } from "@/lib/content/site";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
 import { Button } from "../atomic/Button";
 import { Container } from "../atomic/Container";

@@ -1,8 +1,8 @@
 "use client";
 
 import { FC, useEffect, useRef, useState } from "react";
-import { ChevronDownIcon } from "../icons/ChevronDownIcon";
 import { phoneHref, site } from "@/lib/content/site";
+import { ChevronDownIcon } from "../icons/ChevronDownIcon";
 import { KyivstarNumber, LifeNumber } from "./PhoneNumbers";
 
 const vodafone = site.phones.find((phone) => phone.id === "vodafone")!;

@@ -7,52 +7,45 @@ on:
     branches: [main]
 
 concurrency:
-  group: ci-cd-${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
   contents: read
 
 env:
-  BUN_VERSION: "1.3.14"
+  SITE_URL: https://hi-tech.ck.ua
 
 jobs:
   ci:
     name: CI
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: ${{ env.BUN_VERSION }}
+          bun-version-file: package.json
 
-      - name: Cache Bun install
-        uses: actions/cache@v4
-        with:
-          path: ~/.bun/install/cache
-          key: bun-${{ runner.os }}-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            bun-${{ runner.os }}-
-
-      - name: Cache Next.js build
-        uses: actions/cache@v4
+      - name: Cache dependencies and Next.js
+        uses: actions/cache@v5
         with:
           path: |
+            ~/.bun/install/cache
             .next/cache
-          key: next-${{ runner.os }}-${{ hashFiles('bun.lock', 'package.json', 'next.config.ts') }}-${{ github.sha }}
+          key: ${{ runner.os }}-bun-next-${{ hashFiles('bun.lock', 'package.json', 'next.config.ts') }}-${{ github.sha }}
           restore-keys: |
-            next-${{ runner.os }}-${{ hashFiles('bun.lock', 'package.json', 'next.config.ts') }}-
-            next-${{ runner.os }}-
+            ${{ runner.os }}-bun-next-${{ hashFiles('bun.lock', 'package.json', 'next.config.ts') }}-
+            ${{ runner.os }}-bun-next-
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Lint
-        run: bun run check
+      - name: Lint and format check
+        run: bunx biome ci
 
       - name: Typecheck
         run: bun run ts-check
@@ -68,41 +61,44 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    environment: Production
+    concurrency:
+      group: production
+      cancel-in-progress: true
+    permissions:
+      contents: read
+      deployments: write
+    environment:
+      name: Production
+      url: ${{ env.SITE_URL }}
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: ${{ env.BUN_VERSION }}
+          bun-version-file: package.json
 
-      - name: Cache Bun install
-        uses: actions/cache@v4
-        with:
-          path: ~/.bun/install/cache
-          key: bun-${{ runner.os }}-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            bun-${{ runner.os }}-
-
-      - name: Cache Next.js build
-        uses: actions/cache@v4
+      - name: Cache dependencies and Next.js
+        uses: actions/cache@v5
         with:
           path: |
+            ~/.bun/install/cache
             .next/cache
-          key: next-${{ runner.os }}-${{ hashFiles('bun.lock', 'package.json', 'next.config.ts') }}-${{ github.sha }}
+          key: ${{ runner.os }}-bun-next-${{ hashFiles('bun.lock', 'package.json', 'next.config.ts') }}-${{ github.sha }}
           restore-keys: |
-            next-${{ runner.os }}-${{ hashFiles('bun.lock', 'package.json', 'next.config.ts') }}-
-            next-${{ runner.os }}-
+            ${{ runner.os }}-bun-next-${{ hashFiles('bun.lock', 'package.json', 'next.config.ts') }}-
+            ${{ runner.os }}-bun-next-
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
       - name: Build OpenNext bundle
         run: bunx opennextjs-cloudflare build
-        env:
-          NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }}
 
       - name: Upload site worker version
         id: site_upload
@@ -112,23 +108,19 @@ jobs:
             --message "GitHub Actions ${{ github.sha }}"
           VERSION_ID=$(bunx wrangler versions list --name hi-tech-ck-ua --json | jq -r '.[0].id')
           echo "version_id=${VERSION_ID}" >> "$GITHUB_OUTPUT"
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Gradual rollout — site worker (10% canary)
-        run: |
-          bunx wrangler versions deploy "${{ steps.site_upload.outputs.version_id }}@10" -y \
-            --name hi-tech-ck-ua \
-            --message "Canary 10% — ${{ github.sha }}"
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: versions deploy ${{ steps.site_upload.outputs.version_id }}@10 -y --name hi-tech-ck-ua --message "Canary 10% — ${{ github.sha }}"
 
       - name: Smoke test canary
         run: |
           for i in 1 2 3 4 5; do
-            STATUS=$(curl -s -o /dev/null -w '%{http_code}' https://hi-tech.ck.ua/)
+            STATUS=$(curl -fsS -o /dev/null -w '%{http_code}' "${{ env.SITE_URL }}/")
             if [ "$STATUS" = "200" ]; then
               echo "Smoke test passed (HTTP $STATUS)"
               exit 0
@@ -139,39 +131,42 @@ jobs:
           exit 1
 
       - name: Promote site worker to 100%
-        run: |
-          bunx wrangler versions deploy "${{ steps.site_upload.outputs.version_id }}@100" -y \
-            --name hi-tech-ck-ua \
-            --message "Promote 100% — ${{ github.sha }}"
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: versions deploy ${{ steps.site_upload.outputs.version_id }}@100 -y --name hi-tech-ck-ua --message "Promote 100% — ${{ github.sha }}"
 
       - name: Upload status-proxy version
         id: proxy_upload
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: versions upload --config workers/status-proxy/wrangler.jsonc --tag gha-${{ github.sha }} --message "GitHub Actions ${{ github.sha }}"
+
+      - name: Resolve status-proxy version id
+        id: proxy_version
         run: |
-          bunx wrangler versions upload \
+          VERSION_ID=$(bunx wrangler versions list \
+            --name hi-tech-status-proxy \
             --config workers/status-proxy/wrangler.jsonc \
-            --tag "gha-${{ github.sha }}" \
-            --message "GitHub Actions ${{ github.sha }}"
-          VERSION_ID=$(bunx wrangler versions list --name hi-tech-status-proxy --config workers/status-proxy/wrangler.jsonc --json | jq -r '.[0].id')
+            --json | jq -r '.[0].id')
           echo "version_id=${VERSION_ID}" >> "$GITHUB_OUTPUT"
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Promote status-proxy to 100%
-        run: |
-          bunx wrangler versions deploy "${{ steps.proxy_upload.outputs.version_id }}@100" -y \
-            --config workers/status-proxy/wrangler.jsonc \
-            --message "Promote 100% — ${{ github.sha }}"
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: versions deploy ${{ steps.proxy_version.outputs.version_id }}@100 -y --config workers/status-proxy/wrangler.jsonc --message "Promote 100% — ${{ github.sha }}"
 
       - name: Smoke test API
         run: |
-          STATUS=$(curl -s -o /dev/null -w '%{http_code}' -X POST https://hi-tech.ck.ua/api/repair-status \
+          STATUS=$(curl -fsS -o /dev/null -w '%{http_code}' -X POST "${{ env.SITE_URL }}/api/repair-status" \
             -H 'Content-Type: application/json' \
             --data '{}')
           if [ "$STATUS" = "400" ]; then

@@ -1,8 +1,7 @@
 import Link from "next/link";
-
-import { HeroBg } from "@/components/pageMain/HeroBg";
 import { Container } from "@/components/atomic/Container";
 import { DropDownSearch } from "@/components/atomic/DropDownSearch";
+import { HeroBg } from "@/components/pageMain/HeroBg";
 import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingHero = () => (

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-
+import { Container } from "@/components/atomic/Container";
 import { ContactNumbers } from "@/components/pageContacts/ContactNumbers";
 import { HeroContactsPage } from "@/components/pageContacts/HeroContactsPage";
 import { VisitUs } from "@/components/pageContacts/VisitUs";
-import { Container } from "@/components/atomic/Container";
 import { fullAddressLine, site } from "@/lib/content/site";
 
 export const metadata: Metadata = {

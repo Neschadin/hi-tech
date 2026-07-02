@@ -1,8 +1,6 @@
 import Link from "next/link";
-
-import { LogoLenovo } from "@/public/imgMainPage/section3/LogoLenovo";
-
 import { Container } from "@/components/atomic/Container";
+import { LogoLenovo } from "@/public/imgMainPage/section3/LogoLenovo";
 import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingLenovoStrip = () => (

@@ -1,14 +1,12 @@
-import { didactGothic } from "@/utils/fontDidactGothic";
-
-import { ItemSquare } from "../atomic/ItemSquare";
-import { Container } from "../atomic/Container";
-
 import apple from "@/public/imgMainPage/section1/apple.png";
+import flashdrive from "@/public/imgMainPage/section1/flashdrive.png";
 import iphone from "@/public/imgMainPage/section1/iphone.png";
 import laptop from "@/public/imgMainPage/section1/laptop.png";
-import flashdrive from "@/public/imgMainPage/section1/flashdrive.png";
 import printer from "@/public/imgMainPage/section1/printer.png";
 import tv from "@/public/imgMainPage/section1/tv.png";
+import { didactGothic } from "@/utils/fontDidactGothic";
+import { Container } from "../atomic/Container";
+import { ItemSquare } from "../atomic/ItemSquare";
 
 export const Section1 = () => {
   return (

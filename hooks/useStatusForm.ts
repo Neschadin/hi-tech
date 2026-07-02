@@ -1,14 +1,12 @@
 "use client";
 
 import { FocusEvent, SubmitEvent, useReducer } from "react";
-
+import { TFormState } from "@/types";
 import {
   isValidActNumber,
   isValidPhoneNumber,
   phoneNumberCleaner
 } from "@/utils/validators";
-
-import { TFormState } from "@/types";
 
 const initialState = {
   fetchedData: null,

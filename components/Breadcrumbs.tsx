@@ -1,11 +1,10 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
+import { getServiceBySlug } from "@/lib/content/services";
 import { Container } from "./atomic/Container";
 import { ChevronDownIcon } from "./icons/ChevronDownIcon";
-import { getServiceBySlug } from "@/lib/content/services";
 
 type Crumb = { href: string; label: string };
 
