@@ -13,7 +13,7 @@ export const Button: FC<TProps> = (props) => {
     onClick,
     className = "",
     size = "M",
-    variant = "filled",
+    variant = "filled"
   } = props;
 
   const btnStyles = `

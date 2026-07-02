@@ -10,45 +10,14 @@ import {
 } from "@/components/landing";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { homeFaq } from "@/lib/content/faq";
-import { site } from "@/lib/content/site";
+import { localBusinessJsonLd, site } from "@/lib/content/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: site.url }
 };
 
-const localBusinessLd = {
-  "@context": "https://schema.org",
-  "@type": "ComputerRepair",
-  name: "Hi-Tech сервіс",
-  url: site.url,
-  telephone: site.phones.map((p) => p.tel),
-  email: site.email,
-  image: `${site.url}/imgMainPage/heroBg/laptop.png`,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: site.address.streetAddress,
-    addressLocality: site.address.addressLocality,
-    addressRegion: site.address.addressRegion,
-    addressCountry: site.address.addressCountry
-  },
-  areaServed: { "@type": "City", name: site.city },
-  priceRange: "$$",
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "10:00",
-      closes: "16:00"
-    }
-  ]
-};
+const localBusinessLd = localBusinessJsonLd();
 
 const faqLd = {
   "@context": "https://schema.org",
@@ -62,7 +31,7 @@ const faqLd = {
 
 export default function MainPage() {
   return (
-    <>
+    <main className="pt-[82px]">
       <JsonLd data={localBusinessLd} />
       <JsonLd data={faqLd} />
 
@@ -81,6 +50,6 @@ export default function MainPage() {
       <LandingFaq />
 
       <LandingCta />
-    </>
+    </main>
   );
 }

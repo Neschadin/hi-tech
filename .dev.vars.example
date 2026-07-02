@@ -1,0 +1,7 @@
+NEXTJS_ENV=development
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=
+# Optional: for workers.dev without custom domain route
+# NEXT_PUBLIC_REPAIR_STATUS_API=https://hi-tech-status-proxy.<account>.workers.dev
+ONEC_URL=
+ONEC_USER=
+ONEC_PASS=

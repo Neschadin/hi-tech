@@ -6,7 +6,7 @@ import { LogoLenovo } from "@/public/imgMainPage/section3/LogoLenovo";
 
 const didactGothic = Didact_Gothic({
   subsets: ["cyrillic"],
-  weight: "400",
+  weight: "400"
 });
 
 export const Section3 = () => {

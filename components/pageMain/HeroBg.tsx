@@ -7,11 +7,11 @@ import tvremote from "@/public/imgMainPage/heroBg/tvremote.png";
 
 export const HeroBg = () => (
   <>
-    <div aria-label="asd" className="absolute w-full">
+    <div className="absolute w-full">
       <Image
         src={tvremote}
         alt="TV Remote"
-        className="absolute left-[254px] top-[-80px] rotate-[120deg] transform"
+        className="absolute left-[254px] top-[-80px] rotate-120 transform"
       />
 
       <Image
@@ -33,6 +33,6 @@ export const HeroBg = () => (
       />
     </div>
 
-    <div className="absolute h-full w-full bg-gradient-to-b from-white/70 to-transparent" />
+    <div className="absolute h-full w-full bg-linear-to-b from-white/70 to-transparent " />
   </>
 );

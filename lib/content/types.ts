@@ -14,6 +14,17 @@ export type OpeningHours = {
   sunday: string;
 };
 
+export type BusinessHours = {
+  weekday: { opens: string; closes: string };
+  saturday: { opens: string; closes: string } | null;
+  sundayClosed: boolean;
+};
+
+export type GeoCoordinates = {
+  lat: number;
+  lng: number;
+};
+
 export type StartingPriceRow = {
   service: string;
   /** Minimum price in UAH for display */

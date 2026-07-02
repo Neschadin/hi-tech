@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { siteConfig } from "@/config/site";
+import { site } from "@/lib/content/site";
 
 import { Container } from "./atomic";
 import { InstagramIcon } from "./icons";
@@ -15,12 +15,10 @@ export const Footer = () => {
           <div className="flex max-w-[280px] flex-col justify-between gap-4">
             <p className="text-2xl font-bold">Hi-Tech</p>
 
-            <span className="text-sm">
-              Магазин цифрової техніки та сервісний центр у м. Черкаси
-            </span>
+            <span className="text-sm">{site.tagline}</span>
 
             <a
-              href={siteConfig.social.instagram}
+              href={site.social.instagram}
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2"

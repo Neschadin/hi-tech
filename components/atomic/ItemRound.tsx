@@ -15,7 +15,7 @@ export const ItemRound: FC<TProps> = ({
   children,
   className = "",
   img,
-  href = "#",
+  href = "#"
 }) => (
   <div
     className={`relative flex h-[260px] w-[208px] flex-col items-center justify-between ${className}`}

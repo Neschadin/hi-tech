@@ -16,6 +16,6 @@ export const mobileDetect = () => {
     isDesktop,
     isAndroid,
     isIos,
-    isSSR,
+    isSSR
   };
 };

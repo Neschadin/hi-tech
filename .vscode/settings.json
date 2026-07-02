@@ -1,8 +1,8 @@
 {
-    "editor.defaultFormatter": "biomejs.biome",
-    "npm.packageManager": "bun",
-    "npm.scriptRunner": "bun",
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "biomejs.biome"
-    }
+  "editor.defaultFormatter": "biomejs.biome",
+  "npm.packageManager": "bun",
+  "npm.scriptRunner": "bun",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
 }

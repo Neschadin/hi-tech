@@ -21,6 +21,7 @@ export const DropDownSearch: FC = () => {
       setIsOpen(false);
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: only attach key listener on mount; handleResetForm is stable for this UI
   useEffect(() => {
     if (isOpen) {
       document.addEventListener("mousedown", closeMenu);

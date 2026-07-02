@@ -15,7 +15,7 @@ export const ItemSquare: FC<TProps> = ({
   children,
   className = "",
   img,
-  href = "#",
+  href = "#"
 }) => (
   <div
     className={`relative flex h-[188px] w-[208px] flex-col items-center justify-between gap-4 rounded-lg border border-gray-300 py-4 ${className}`}

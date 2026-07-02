@@ -3,12 +3,11 @@ import Image from "next/image";
 
 import { ContactNumbers, HeroContactsPage, VisitUs } from "@/components";
 import { Container } from "@/components/atomic";
-import { site } from "@/lib/content/site";
+import { fullAddressLine, site } from "@/lib/content/site";
 
 export const metadata: Metadata = {
   title: "Контактна інформація | Hi-Tech сервіс",
-  description:
-    "Контактна інформація сервісного центру Hi-Tech | Де в Черкасах можна терміново відремонтувати та налаштувати комп'ютер або ноутбук. Звернення щодо гарантії Lenovo.",
+  description: `Контактна інформація ${site.googleBusinessName}. ${fullAddressLine()}. Телефони: ${site.phones.map((p) => p.display).join(", ")}.`,
   alternates: { canonical: `${site.url}/contacts` }
 };
 

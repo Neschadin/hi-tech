@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import { KyivstarNumber, LifeNumber } from "../atomic";
 import { KyivstarIcon, LifeIcon, MailIcon } from "../icons";
+import { site } from "@/lib/content/site";
 
 const Wrap = ({ children }: PropsWithChildren) => (
   <div className="flex h-16 w-[328px] items-center justify-center gap-4 rounded-lg border border-input-light">
@@ -22,7 +23,7 @@ export const Numbers = () => (
 
     <Wrap>
       <MailIcon />
-      <a href="mailto:support@hi-tech.ck.ua">support@hi-tech.ck.ua</a>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
     </Wrap>
   </div>
 );

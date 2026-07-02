@@ -43,7 +43,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 
         <Breadcrumbs />
 
-        <main className="flex-1 pt-[82px]">{children}</main>
+        {children}
 
         <Footer />
       </body>
