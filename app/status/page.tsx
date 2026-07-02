@@ -1,9 +1,9 @@
 "use client";
 
 import { ModalWindow } from "@/components/ModalWindow";
-import { Container } from "@/components/atomic";
+import { Container } from "@/components/atomic/Container";
 import { useStatusForm } from "@/hooks/useStatusForm";
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
 export default function StatusPage() {
   const { state, handleResetForm, handleChange, handleBlur, handleSubmit } =

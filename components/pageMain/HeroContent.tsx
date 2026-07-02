@@ -1,8 +1,9 @@
 import { FC } from "react";
 
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
-import { Container, DropDownSearch } from "@/components/atomic";
+import { Container } from "@/components/atomic/Container";
+import { DropDownSearch } from "@/components/atomic/DropDownSearch";
 
 export const HeroContent: FC = () => {
   return (

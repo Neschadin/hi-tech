@@ -1,8 +1,9 @@
 import Link from "next/link";
 
 import { HeroBg } from "@/components/pageMain/HeroBg";
-import { Container, DropDownSearch } from "@/components/atomic";
-import { didactGothic } from "@/utils";
+import { Container } from "@/components/atomic/Container";
+import { DropDownSearch } from "@/components/atomic/DropDownSearch";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingHero = () => (
   <section className="relative min-h-[520px] max-w-[1920px] md:min-h-[580px] mx-auto">

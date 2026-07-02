@@ -54,7 +54,7 @@ export const site = {
     sundayClosed: true
   } satisfies BusinessHours,
   social: {
-    instagram: "https://www.instagram.com/hi_tech.ck.ua/"
+    instagram: "https://www.instagram.com/hitech_ck/"
   },
   /** Disclaimer near any price teaser */
   priceDisclaimer:

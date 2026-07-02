@@ -1,13 +1,11 @@
-import {
-  LandingAdvantages,
-  LandingCta,
-  LandingFaq,
-  LandingHero,
-  LandingHowTo,
-  LandingLenovoStrip,
-  LandingPricingTeaser,
-  LandingPriority
-} from "@/components/landing";
+import { LandingAdvantages } from "@/components/landing/LandingAdvantages";
+import { LandingCta } from "@/components/landing/LandingCta";
+import { LandingFaq } from "@/components/landing/LandingFaq";
+import { LandingHero } from "@/components/landing/LandingHero";
+import { LandingHowTo } from "@/components/landing/LandingHowTo";
+import { LandingLenovoStrip } from "@/components/landing/LandingLenovoStrip";
+import { LandingPricingTeaser } from "@/components/landing/LandingPricingTeaser";
+import { LandingPriority } from "@/components/landing/LandingPriority";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { homeFaq } from "@/lib/content/faq";
 import { localBusinessJsonLd, site } from "@/lib/content/site";

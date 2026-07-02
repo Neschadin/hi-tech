@@ -1,4 +1,4 @@
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const HeroContactsPage = () => (
   <>

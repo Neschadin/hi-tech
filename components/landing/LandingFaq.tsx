@@ -1,6 +1,6 @@
-import { Container } from "@/components/atomic";
+import { Container } from "@/components/atomic/Container";
 import { homeFaq } from "@/lib/content/faq";
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingFaq = () => (
   <section className="bg-light-bg py-16 md:py-20">

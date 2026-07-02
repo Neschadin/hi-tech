@@ -1,5 +1,5 @@
 import { TFormState } from "@/types";
-import { CloseIcon } from "./icons";
+import { CloseIcon } from "./icons/CloseIcon";
 import { MouseEvent, useEffect } from "react";
 import { formatPhoneNumber } from "@/utils/validators";
 import { Spinner } from "./Spinner";

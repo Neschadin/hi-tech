@@ -2,8 +2,8 @@ import Link from "next/link";
 
 import { LogoLenovo } from "@/public/imgMainPage/section3/LogoLenovo";
 
-import { Container } from "@/components/atomic";
-import { didactGothic } from "@/utils";
+import { Container } from "@/components/atomic/Container";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingLenovoStrip = () => (
   <section className="relative bg-primary py-14 md:py-20">

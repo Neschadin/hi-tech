@@ -1,4 +1,4 @@
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 import { hoursDisplay } from "@/lib/content/site";
 
 import { Numbers } from "./Numbers";

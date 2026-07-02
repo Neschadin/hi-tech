@@ -1,6 +1,6 @@
-import { Container } from "@/components/atomic";
+import { Container } from "@/components/atomic/Container";
 import { homeAdvantages } from "@/lib/content/home";
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingAdvantages = () => (
   <section className="bg-white py-16 md:py-20">

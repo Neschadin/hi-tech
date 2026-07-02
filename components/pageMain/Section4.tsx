@@ -1,7 +1,8 @@
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 import { site } from "@/lib/content/site";
 
-import { Button, Container } from "../atomic";
+import { Button } from "../atomic/Button";
+import { Container } from "../atomic/Container";
 import { VideoCards } from "./VideoCards";
 
 export const Section4 = () => {

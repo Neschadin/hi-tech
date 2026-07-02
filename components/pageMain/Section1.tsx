@@ -1,6 +1,7 @@
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
-import { ItemSquare, Container } from "../atomic";
+import { ItemSquare } from "../atomic/ItemSquare";
+import { Container } from "../atomic/Container";
 
 import apple from "@/public/imgMainPage/section1/apple.png";
 import iphone from "@/public/imgMainPage/section1/iphone.png";
@@ -11,7 +12,7 @@ import tv from "@/public/imgMainPage/section1/tv.png";
 
 export const Section1 = () => {
   return (
-    <section className="relative min-h-[450px] max-w-[1920px] pt-5">
+    <section className="relative min-h-[450px] max-w-[1920px] pt-5 m-auto">
       <Container className="flex-col">
         <h2 className={`${didactGothic} text-center text-[40px] font-normal`}>
           З яким пристроєм у вас виникла проблема?

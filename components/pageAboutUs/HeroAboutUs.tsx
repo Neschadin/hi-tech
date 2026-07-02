@@ -1,5 +1,5 @@
-import { didactGothic } from "@/utils";
-import { Container } from "../atomic";
+import { didactGothic } from "@/utils/fontDidactGothic";
+import { Container } from "../atomic/Container";
 
 export const HeroAboutUs = () => (
   <Container

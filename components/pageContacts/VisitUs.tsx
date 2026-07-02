@@ -1,6 +1,6 @@
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 import { site } from "@/lib/content/site";
-import { BgLight } from "../atomic";
+import { BgLight } from "../atomic/BgLight";
 import { GoogleMapsMarker } from "./GoogleMapsMarker";
 
 export const VisitUs = () => {

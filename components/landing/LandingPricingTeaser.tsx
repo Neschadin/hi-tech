@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import { Container } from "@/components/atomic";
+import { Container } from "@/components/atomic/Container";
 import { serviceCategories } from "@/lib/content/services";
 import { site } from "@/lib/content/site";
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
 /** Flatten a few representative rows per category for the home teaser */
 const teaserRows = serviceCategories.flatMap((cat) =>

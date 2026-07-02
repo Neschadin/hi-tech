@@ -1,4 +1,4 @@
-import { Container } from "../atomic";
+import { Container } from "../atomic/Container";
 
 export const SpecializationDetails = () => (
   <section className="mb-32 bg-light-bg px-16 py-16">

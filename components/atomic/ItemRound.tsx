@@ -2,7 +2,7 @@ import { FC } from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
-import { ChevronDownIcon } from "../icons";
+import { ChevronDownIcon } from "../icons/ChevronDownIcon";
 
 type TProps = {
   className?: string;

@@ -5,8 +5,8 @@ import laptop from "@/public/imgMainPage/section1/laptop.png";
 import printer from "@/public/imgMainPage/section1/printer.png";
 import { LogoLenovo } from "@/public/imgMainPage/section3/LogoLenovo";
 
-import { Container } from "@/components/atomic";
-import { didactGothic } from "@/utils";
+import { Container } from "@/components/atomic/Container";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
 type Card = {
   title: string;

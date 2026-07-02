@@ -2,8 +2,8 @@ import Link from "next/link";
 
 import { site } from "@/lib/content/site";
 
-import { Container } from "./atomic";
-import { InstagramIcon } from "./icons";
+import { Container } from "./atomic/Container";
+import { InstagramIcon } from "./icons/InstagramIcon";
 
 const footerLinkClass = "hover:text-white hover:underline underline-offset-4";
 

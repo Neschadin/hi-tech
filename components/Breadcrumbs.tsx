@@ -3,8 +3,8 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import { Container } from "./atomic";
-import { ChevronDownIcon } from "./icons";
+import { Container } from "./atomic/Container";
+import { ChevronDownIcon } from "./icons/ChevronDownIcon";
 import { getServiceBySlug } from "@/lib/content/services";
 
 type Crumb = { href: string; label: string };

@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import { Container } from "@/components/atomic";
+import { Container } from "@/components/atomic/Container";
 import { site, phoneHref } from "@/lib/content/site";
-import { didactGothic } from "@/utils";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingCta = () => (
   <section className="border-t border-divider-light bg-white py-16">

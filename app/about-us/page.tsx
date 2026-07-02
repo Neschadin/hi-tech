@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 
-import {
-  AboutPrimary,
-  HeroAboutUs,
-  Section1,
-  Specialization,
-  SpecializationDetails
-} from "@/components";
+import { AboutPrimary } from "@/components/pageAboutUs/AboutPrimary";
+import { HeroAboutUs } from "@/components/pageAboutUs/HeroAboutUs";
+import { Section1 } from "@/components/pageMain/Section1";
+import { Specialization } from "@/components/pageAboutUs/Specialization";
+import { SpecializationDetails } from "@/components/pageAboutUs/SpecializationDetails";
 import { site } from "@/lib/content/site";
 
 export const metadata: Metadata = {

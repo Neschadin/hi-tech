@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useEffect, useRef, useState } from "react";
-import { ChevronDownIcon } from "../icons";
+import { ChevronDownIcon } from "../icons/ChevronDownIcon";
 import { phoneHref, site } from "@/lib/content/site";
 import { KyivstarNumber, LifeNumber } from "./PhoneNumbers";
 

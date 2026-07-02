@@ -1,6 +1,8 @@
 import { PropsWithChildren } from "react";
-import { KyivstarNumber, LifeNumber } from "../atomic";
-import { KyivstarIcon, LifeIcon, MailIcon } from "../icons";
+import { KyivstarNumber, LifeNumber } from "../atomic/PhoneNumbers";
+import { KyivstarIcon } from "../icons/KyivstarIcon";
+import { LifeIcon } from "../icons/LifeIcon";
+import { MailIcon } from "../icons/MailIcon";
 import { site } from "@/lib/content/site";
 
 const Wrap = ({ children }: PropsWithChildren) => (

@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 import { NavMenu } from "./HeaderNavMenu";
-import { DropDown, Container } from "./atomic";
+import { DropDown } from "./atomic/DropDown";
+import { Container } from "./atomic/Container";
 
 const btnBase =
   "inline-flex justify-center items-center rounded-full text-lg transition duration-200 ease-out whitespace-nowrap font-medium px-[22px] h-[36px]";

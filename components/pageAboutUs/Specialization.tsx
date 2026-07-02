@@ -1,9 +1,11 @@
 import { PropsWithChildren } from "react";
 
-import { Container } from "../atomic";
-import { didactGothic } from "@/utils";
+import { Container } from "../atomic/Container";
+import { didactGothic } from "@/utils/fontDidactGothic";
 
-import { ScrewDriverIcon, ShoppingCart, StoreIcon } from "../icons";
+import { ScrewDriverIcon } from "../icons/ScrewDriverIcon";
+import { ShoppingCart } from "../icons/ShoppingCart";
+import { StoreIcon } from "../icons/StoreIcon";
 
 const Div = ({ children }: PropsWithChildren) => (
   <div className="mx-auto flex min-h-[250px] max-w-[448px] flex-col items-center gap-6 rounded-lg border border-gray-300 px-3 py-6 md:w-full">

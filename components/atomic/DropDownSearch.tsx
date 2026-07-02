@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { serviceMenuGroups } from "@/lib/content/services";
 
-import { ChevronDownIcon } from "../icons";
+import { ChevronDownIcon } from "../icons/ChevronDownIcon";
 
 export const DropDownSearch: FC = () => {
   const [isOpen, setIsOpen] = useState(false);

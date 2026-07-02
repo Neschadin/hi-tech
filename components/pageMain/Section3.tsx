@@ -1,6 +1,7 @@
 import { Didact_Gothic } from "next/font/google";
 
-import { Button, Container } from "../atomic";
+import { Button } from "../atomic/Button";
+import { Container } from "../atomic/Container";
 
 import { LogoLenovo } from "@/public/imgMainPage/section3/LogoLenovo";
 
