@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { Logo } from "./icons/Logo";
 import { NavMenu } from "./HeaderNavMenu";
 import { DropDown } from "./atomic/DropDown";
 import { Container } from "./atomic/Container";
@@ -16,9 +17,10 @@ export const Header = () => {
       <Container className="h-[82px] items-center justify-between gap-4 md:gap-8">
         <Link
           href="/"
-          className="text-2xl font-bold whitespace-nowrap hover:text-primary"
+          aria-label="Hi-Tech — головна"
+          className="inline-flex shrink-0 items-center"
         >
-          Hi-Tech
+          <Logo className="h-14 w-auto" />
         </Link>
 
         <NavMenu />

@@ -10,26 +10,28 @@ export const HeroBg = () => (
     <div className="absolute w-full">
       <Image
         src={tvremote}
-        alt="TV Remote"
+        alt=""
         className="absolute left-[254px] top-[-80px] rotate-120 transform"
       />
 
       <Image
         src={iphone}
-        alt="IPhone"
+        alt=""
         className="absolute left-[1030px] top-[-80px] rotate-[-45.67deg] transform"
       />
 
       <Image
         src={ipad}
-        alt="IPad"
+        alt=""
         className="absolute left-[385px] top-[210px] rotate-[153.25deg] transform"
       />
 
       <Image
         src={laptop}
-        alt="Laptop"
-        className=" absolute left-[572px] top-[-130px] rotate-[-40deg] scale-x-[-1] transform"
+        alt=""
+        priority
+        placeholder="blur"
+        className="absolute left-[572px] top-[-130px] rotate-[-40deg] scale-x-[-1] transform"
       />
     </div>
 

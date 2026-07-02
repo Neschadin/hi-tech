@@ -14,6 +14,8 @@
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy && bun run deploy:status-proxy",
     "deploy:status-proxy": "wrangler deploy --config workers/status-proxy/wrangler.jsonc",
+    "release": "opennextjs-cloudflare build && opennextjs-cloudflare upload && wrangler versions deploy -y --name hi-tech-ck-ua",
+    "release:status-proxy": "wrangler versions upload --config workers/status-proxy/wrangler.jsonc && wrangler versions deploy -y --config workers/status-proxy/wrangler.jsonc",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
