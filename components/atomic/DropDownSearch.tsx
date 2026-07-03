@@ -89,10 +89,10 @@ export const DropDownSearch: FC = () => {
         </div>
       </div>
 
-      <div className="relative flex min-h-[60px] w-full items-center justify-between rounded-full bg-white shadow-round">
+      <div className="relative flex min-h-[60px] w-full items-center rounded-full bg-white shadow-round px-1.5">
         <button
           type="button"
-          className="relative z-10 ml-4 inline-flex min-h-11 flex-1 items-center justify-start gap-x-2 py-2 text-left md:ml-7"
+          className="relative z-10 mx-4 inline-flex min-h-11 flex-1 items-center max-sm:justify-end gap-x-2 py-2 text-left md:ml-7"
           onClick={toggleMenu}
           aria-expanded={isOpen}
           aria-haspopup="true"
@@ -104,7 +104,7 @@ export const DropDownSearch: FC = () => {
         <Link
           href="/services/noutbuky"
           onClick={() => setIsOpen(false)}
-          className="relative z-10 mr-1 inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-blue-500 px-5 text-base font-semibold text-white transition hover:bg-blue-600 md:mr-[6px] md:px-7"
+          className="max-sm:hidden relative z-10 inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-blue-500 px-5 text-base font-semibold text-white transition hover:bg-blue-600 md:px-7"
         >
           Дізнатися деталі
         </Link>

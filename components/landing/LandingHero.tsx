@@ -5,7 +5,7 @@ import { HeroBg } from "@/components/pageMain/HeroBg";
 import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingHero = () => (
-  <section className="relative min-h-[520px] max-w-[1920px] md:min-h-[580px] mx-auto">
+  <section className="relative mx-auto min-h-[520px] max-w-[1920px] overflow-hidden md:min-h-[580px]">
     <HeroBg />
 
     <Container className="min-h-[280px] flex-col items-center justify-center py-10 md:min-h-[304px] md:py-14">
