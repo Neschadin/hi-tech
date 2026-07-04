@@ -1,47 +1,62 @@
 "use client";
 
-import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
-import { useCallback, useState } from "react";
-import { mapCenter, markerPosition } from "@/lib/content/site";
+import {
+  AdvancedMarker,
+  APIProvider,
+  Map,
+  useApiIsLoaded
+} from "@vis.gl/react-google-maps";
+import { markerPosition, site } from "@/lib/content/site";
 import { mobileDetect } from "@/utils/mobileDetect";
 
-const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
+const mapId = process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID ?? "";
 
+const center = markerPosition();
+const marker = center;
 const { isMobile } = mobileDetect();
 
-const center = mapCenter();
-const marker = markerPosition();
+const mapContainerClass =
+  "w-full h-[440px] rounded-lg border border-input-light overflow-hidden";
 
-const mapOptions = {
-  zoomControl: !isMobile,
-  mapTypeControl: false,
-  maxZoom: 18,
-  minZoom: 13
+const MapContent = () => {
+  const isLoaded = useApiIsLoaded();
+
+  if (!isLoaded) {
+    return (
+      <div
+        className={`${mapContainerClass} animate-pulse bg-light-bg`}
+        aria-hidden
+      />
+    );
+  }
+
+  return (
+    <div className={mapContainerClass}>
+      <Map
+        mapId={mapId}
+        defaultCenter={center}
+        defaultZoom={17}
+        style={{ width: "100%", height: "100%" }}
+        gestureHandling="cooperative"
+        mapTypeControl={false}
+        zoomControl={!isMobile}
+        minZoom={15}
+        maxZoom={20}
+        disableDefaultUI={false}
+      >
+        <AdvancedMarker position={marker} title={site.googleBusinessName} />
+      </Map>
+    </div>
+  );
 };
 
 export const GoogleMapsMarker = () => {
-  const [map, setMap] = useState<google.maps.Map | null>(null);
-  const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
-    googleMapsApiKey: GOOGLE_MAPS_API_KEY ?? ""
-  });
+  if (!apiKey || !mapId) return null;
 
-  const onLoad = useCallback((map: google.maps.Map) => {
-    const bounds = new window.google.maps.LatLngBounds(marker);
-    map.fitBounds(bounds);
-
-    setMap(map);
-  }, []);
-
-  return isLoaded ? (
-    <GoogleMap
-      mapContainerClassName="w-full h-[440px] rounded-lg border border-input-light"
-      center={center}
-      onLoad={onLoad}
-      onUnmount={() => setMap(null)}
-      options={mapOptions}
-    >
-      <MarkerF position={marker} />
-    </GoogleMap>
-  ) : null;
+  return (
+    <APIProvider apiKey={apiKey} version="weekly">
+      <MapContent />
+    </APIProvider>
+  );
 };

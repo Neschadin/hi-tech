@@ -1,4 +1,5 @@
 import type { CSSProperties, FC, JSX, PropsWithChildren } from "react";
+import { cn } from "@/utils/cn";
 
 type TProps = PropsWithChildren & {
   className?: string;
@@ -15,7 +16,10 @@ export const Container: FC<TProps> = ({
   <Component
     style={style}
     id="custom-container"
-    className={`container relative mx-auto flex max-w-cont self-center px-5 ${className}`}
+    className={cn(
+      "container relative mx-auto flex max-w-cont self-center px-5",
+      className
+    )}
   >
     {children}
   </Component>

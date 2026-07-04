@@ -15,12 +15,15 @@ permissions:
 
 env:
   SITE_URL: https://hi-tech.ck.ua
+  NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID: c0788552a798ed0d535ca967
 
 jobs:
   ci:
     name: CI
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }}
     steps:
       - uses: actions/checkout@v6
 
@@ -42,8 +45,6 @@ jobs:
       - run: bunx biome ci
       - run: bun run ts-check
       - run: bun run build
-        env:
-          NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }}
 
   deploy:
     name: Deploy

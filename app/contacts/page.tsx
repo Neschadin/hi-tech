@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function ContactsPage() {
   return (
-    <Container className="flex-col">
+    <Container className="flex-col px-0">
       <ContactsDecorBg />
 
       <HeroContactsPage />
