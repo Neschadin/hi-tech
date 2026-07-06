@@ -1,8 +1,10 @@
+import { cn } from "@/utils/cn";
+
 type TProps = {
   className?: string;
 };
 
-export const CheckIcon = ({ className = "" }: TProps) => (
+export const CheckIcon = ({ className }: TProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -10,7 +12,7 @@ export const CheckIcon = ({ className = "" }: TProps) => (
     strokeWidth="2"
     stroke="currentColor"
     aria-hidden="true"
-    className={`h-[28px] w-[28px] transform text-primary ${className}`}
+    className={cn("h-[28px] w-[28px] transform text-primary", className)}
   >
     <path
       strokeLinecap="round"

@@ -2,12 +2,11 @@ import Link from "next/link";
 
 import { Container } from "@/components/atomic/Container";
 import { phoneHref, site } from "@/lib/content/site";
-import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingCta = () => (
   <section className="border-t border-divider-light bg-white py-16">
     <Container className="flex-col items-center gap-8 text-center">
-      <h2 className={`${didactGothic} max-w-2xl text-3xl md:text-4xl`}>
+      <h2 className="font-didact max-w-2xl text-3xl md:text-4xl">
         Готові допомогти сьогодні
       </h2>
       <p className="max-w-xl text-lg text-text-on-white">

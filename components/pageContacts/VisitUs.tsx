@@ -1,5 +1,4 @@
 import { site } from "@/lib/content/site";
-import { didactGothic } from "@/utils/fontDidactGothic";
 import { BgLight } from "../atomic/BgLight";
 import { GoogleMapsMarker } from "./GoogleMapsMarker";
 
@@ -8,7 +7,7 @@ export const VisitUs = () => {
     <section className="relative min-h-[764px] overflow-hidden bg-white p-5 text-center sm:py-16">
       <BgLight />
 
-      <h2 className={`${didactGothic} mb-10 text-[40px]`}>Завітайте до нас</h2>
+      <h2 className="font-didact mb-10 text-[40px]">Завітайте до нас</h2>
 
       <div className="mx-auto mb-20 max-w-[846px] text-xl font-medium text-balance">
         Немає нічого кращого, ніж спілкування наживо. Запрошуємо вас за адресою

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FC, useEffect, useRef, useState } from "react";
 
 import { serviceMenuGroups } from "@/lib/content/services";
+import { cn } from "@/utils/cn";
 
 import { ChevronDownIcon } from "../icons/ChevronDownIcon";
 
@@ -42,11 +43,12 @@ export const DropDownSearch: FC = () => {
       ref={dropdownRef}
     >
       <div
-        className={`absolute top-0 z-20 w-full origin-top transform overflow-hidden rounded-[30px] bg-white shadow-xl transition ${
+        className={cn(
+          "absolute top-0 z-20 w-full origin-top transform overflow-hidden rounded-[30px] bg-white shadow-xl transition",
           isOpen
             ? "max-h-[min(75vh,920px)] scale-y-100 opacity-100 duration-150 ease-out"
             : "pointer-events-none max-h-0 scale-y-95 opacity-0 duration-100 ease-in"
-        }`}
+        )}
       >
         <div className="max-h-[min(75vh,920px)] overflow-y-auto px-4 pb-6 pt-[72px]">
           <div className="flex flex-col gap-8">

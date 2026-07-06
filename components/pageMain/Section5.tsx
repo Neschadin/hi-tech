@@ -4,7 +4,6 @@ import pro from "@/public/imgMainPage/section5/pro.png";
 import tech from "@/public/imgMainPage/section5/tech.png";
 import tv from "@/public/imgMainPage/section5/tv.png";
 import windows from "@/public/imgMainPage/section5/windows.png";
-import { didactGothic } from "@/utils/fontDidactGothic";
 import { BgLight } from "../atomic/BgLight";
 import { Container } from "../atomic/Container";
 import { ItemRound } from "../atomic/ItemRound";
@@ -15,9 +14,7 @@ export const Section5 = () => {
       <BgLight />
 
       <Container className="flex-col">
-        <h2
-          className={`${didactGothic} mb-10 text-center text-[40px] font-normal`}
-        >
+        <h2 className="font-didact mb-10 text-center text-[40px] font-normal">
           Лагодимо техніку, на яку ви розраховуєте
         </h2>
 

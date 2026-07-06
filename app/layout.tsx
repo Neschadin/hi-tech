@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Exo_2 } from "next/font/google";
+import { Didact_Gothic, Exo_2 } from "next/font/google";
 import { PropsWithChildren } from "react";
 import "./globals.css";
 
@@ -7,8 +7,15 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { site } from "@/lib/content/site";
+import { cn } from "@/utils/cn";
 
 const exo2 = Exo_2({ subsets: ["latin", "cyrillic"] });
+
+const didactGothic = Didact_Gothic({
+  subsets: ["cyrillic"],
+  weight: "400",
+  variable: "--font-didact-gothic"
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -40,7 +47,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="uk">
-      <body className={`flex flex-col ${exo2.className}`}>
+      <body
+        className={cn("flex flex-col", exo2.className, didactGothic.variable)}
+      >
         <Header />
 
         <Breadcrumbs />

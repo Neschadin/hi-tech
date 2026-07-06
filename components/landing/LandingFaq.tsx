@@ -1,11 +1,10 @@
 import { Container } from "@/components/atomic/Container";
 import { homeFaq } from "@/lib/content/faq";
-import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingFaq = () => (
   <section className="bg-light-bg py-16 md:py-20">
     <Container className="flex-col gap-8">
-      <h2 className={`${didactGothic} text-center text-3xl md:text-4xl`}>
+      <h2 className="font-didact text-center text-3xl md:text-4xl">
         Часті питання
       </h2>
       <div className="mx-auto flex w-full max-w-3xl flex-col gap-3">

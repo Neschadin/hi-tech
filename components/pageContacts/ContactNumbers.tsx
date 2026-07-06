@@ -1,5 +1,4 @@
 import { hoursDisplay } from "@/lib/content/site";
-import { didactGothic } from "@/utils/fontDidactGothic";
 
 import { Numbers } from "./Numbers";
 
@@ -10,9 +9,7 @@ export const ContactNumbers = () => {
 
   return (
     <section className="min-h-[426px] p-5 text-center sm:py-16 bg-white">
-      <h2 className={`${didactGothic} mb-10 text-[40px]`}>
-        Давайте поспілкуємося
-      </h2>
+      <h2 className="font-didact mb-10 text-[40px]">Давайте поспілкуємося</h2>
 
       <div className="mx-auto mb-20 max-w-[846px] text-xl font-medium text-balance">
         Бажаєте зв’язатися по телефону? Звичайно. Наші експерти готові допомогти

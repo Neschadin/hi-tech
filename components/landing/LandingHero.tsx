@@ -2,16 +2,13 @@ import Link from "next/link";
 import { Container } from "@/components/atomic/Container";
 import { DropDownSearch } from "@/components/atomic/DropDownSearch";
 import { HeroBg } from "@/components/pageMain/HeroBg";
-import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingHero = () => (
   <section className="relative mx-auto min-h-[520px] max-w-[1920px] overflow-hidden md:min-h-[580px]">
     <HeroBg />
 
     <Container className="min-h-[280px] flex-col items-center justify-center py-10 md:min-h-[304px] md:py-14">
-      <h1
-        className={`${didactGothic} mb-4 text-center text-4xl leading-tight tracking-tight md:mb-6 md:text-[63px] md:leading-[1.1]`}
-      >
+      <h1 className="font-didact mb-4 text-center text-4xl leading-tight tracking-tight md:mb-6 md:text-[63px] md:leading-[1.1]">
         Ваша техніка — знову працює
       </h1>
 

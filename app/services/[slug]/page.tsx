@@ -6,7 +6,7 @@ import { Container } from "@/components/atomic/Container";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getAllServiceSlugs, getServiceBySlug } from "@/lib/content/services";
 import { phoneHref, site } from "@/lib/content/site";
-import { didactGothic } from "@/utils/fontDidactGothic";
+import { LogoLenovo } from "@/public/imgMainPage/section3/LogoLenovo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -79,44 +79,53 @@ export default async function ServiceCategoryPage({ params }: Props) {
       {faqLd ? <JsonLd data={faqLd} /> : null}
 
       <section className="bg-white pb-12 pt-8 md:pt-10">
-        <Container className="flex-col gap-8">
-          <div className="max-w-3xl">
-            <h1
-              className={`${didactGothic} text-4xl tracking-tight md:text-5xl`}
-            >
-              {s.title}
-            </h1>
-            <p className="mt-2 text-xl font-semibold text-neutral-grey">
-              {s.heroLead}
-            </p>
-            <p className="mt-6 text-lg font-medium leading-relaxed text-text-on-white">
-              {s.heroIntro}
-            </p>
+        <Container className="flex-col gap-8 md:flex-row md:items-start md:justify-between md:gap-10">
+          <div className="flex max-w-3xl flex-1 flex-col gap-8">
+            <div>
+              <h1 className="font-didact text-4xl tracking-tight md:text-5xl">
+                {s.title}
+              </h1>
+              <p className="mt-2 text-xl font-semibold text-neutral-grey">
+                {s.heroLead}
+              </p>
+              <p className="mt-6 text-lg font-medium leading-relaxed text-text-on-white">
+                {s.heroIntro}
+              </p>
+            </div>
+
+            <aside className="max-w-2xl rounded-2xl bg-light-bg px-6 py-5 text-text-on-white">
+              <p className="font-medium">
+                Потрібна консультація або діагностика? Зателефонуйте — підкажемо
+                наступний крок.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {site.phones.map((p) => (
+                  <a
+                    key={p.id}
+                    href={phoneHref(p.tel)}
+                    className="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-white bg-white px-5 text-base font-semibold text-primary shadow-sm ring-1 ring-divider-light transition hover:bg-light-bg"
+                  >
+                    {p.display}
+                  </a>
+                ))}
+              </div>
+            </aside>
           </div>
 
-          <aside className="max-w-2xl rounded-2xl bg-light-bg px-6 py-5 text-text-on-white">
-            <p className="font-medium">
-              Потрібна консультація або діагностика? Зателефонуйте — підкажемо
-              наступний крок.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {site.phones.map((p) => (
-                <a
-                  key={p.id}
-                  href={phoneHref(p.tel)}
-                  className="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-white bg-white px-5 text-base font-semibold text-primary shadow-sm ring-1 ring-divider-light transition hover:bg-light-bg"
-                >
-                  {p.display}
-                </a>
-              ))}
+          {slug === "lenovo" && (
+            <div
+              aria-hidden
+              className="grid max-w-sm place-items-center self-center rounded-3xl bg-light-bg p-6 md:self-start md:p-8"
+            >
+              <LogoLenovo />
             </div>
-          </aside>
+          )}
         </Container>
       </section>
 
       <section id="ciny" className="scroll-mt-28 bg-white py-12">
         <Container className="flex-col gap-6">
-          <h2 className={`${didactGothic} text-center text-3xl md:text-4xl`}>
+          <h2 className="font-didact text-center text-3xl md:text-4xl">
             Орієнтовні ціни
           </h2>
           <p className="mx-auto max-w-3xl text-center text-base text-neutral-grey">
@@ -165,7 +174,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
       {s.faq.length > 0 ? (
         <section className="bg-light-bg py-16">
           <Container className="flex-col gap-8">
-            <h2 className={`${didactGothic} text-center text-3xl md:text-4xl`}>
+            <h2 className="font-didact text-center text-3xl md:text-4xl">
               Часті питання
             </h2>
             <div className="mx-auto flex w-full max-w-3xl flex-col gap-3">
@@ -192,9 +201,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
           <Container className="grid gap-10 md:grid-cols-2">
             {s.seoBlocks.map((block) => (
               <article key={block.heading} className="flex flex-col gap-4">
-                <h2 className={`${didactGothic} text-2xl md:text-3xl`}>
-                  {block.heading}
-                </h2>
+                <h2 className="text-2xl md:text-3xl">{block.heading}</h2>
                 {block.paragraphs.map((p, i) => (
                   <p
                     key={`${block.heading}-${i}`}

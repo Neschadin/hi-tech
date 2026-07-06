@@ -1,5 +1,4 @@
 import { PropsWithChildren } from "react";
-import { didactGothic } from "@/utils/fontDidactGothic";
 import { Container } from "../atomic/Container";
 
 import { ScrewDriverIcon } from "../icons/ScrewDriverIcon";
@@ -17,7 +16,7 @@ export const Specialization = () => (
     component="section"
     className="my-16 flex-col gap-16 text-center sm:my-32"
   >
-    <h2 className={`${didactGothic} text-[40px]`}>Ми спеціалізуємося на</h2>
+    <h2 className="font-didact text-[40px]">Ми спеціалізуємося на</h2>
 
     <div className="flex flex-col gap-4 md:flex-row md:gap-8">
       <Div>

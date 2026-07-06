@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Container } from "@/components/atomic/Container";
 import { serviceCategories } from "@/lib/content/services";
 import { site } from "@/lib/content/site";
-import { didactGothic } from "@/utils/fontDidactGothic";
 
 /** Flatten a few representative rows per category for the home teaser */
 const teaserRows = serviceCategories.flatMap((cat) =>
@@ -21,9 +20,7 @@ export const LandingPricingTeaser = () => (
   <section className="bg-white py-16 md:py-20">
     <Container className="flex-col gap-8">
       <div className="text-center">
-        <h2 className={`${didactGothic} text-3xl md:text-4xl`}>
-          Орієнтовні ціни
-        </h2>
+        <h2 className="font-didact text-3xl md:text-4xl">Орієнтовні ціни</h2>
         <p className="mx-auto mt-4 max-w-3xl text-base text-neutral-grey">
           {site.priceDisclaimer}
         </p>

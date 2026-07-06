@@ -1,5 +1,6 @@
 import { MouseEvent, useEffect } from "react";
 import { TFormState } from "@/types";
+import { cn } from "@/utils/cn";
 import { formatPhoneNumber } from "@/utils/validators";
 import { CloseIcon } from "./icons/CloseIcon";
 import { Spinner } from "./Spinner";
@@ -43,9 +44,10 @@ export const ModalWindow = ({ handleResetForm, state }: IModal) => {
         </div>
       ) : (
         <div
-          className={`block-center absolute m-auto max-h-[90vh] min-w-[min(100vw-2rem,420px)] max-w-lg overflow-y-auto rounded-2xl bg-neutral-100 px-6 py-14 shadow-xl md:px-10 ${
-            error ? "border-2 border-red-500" : ""
-          }`}
+          className={cn(
+            "block-center absolute m-auto max-h-[90vh] min-w-[min(100vw-2rem,420px)] max-w-lg overflow-y-auto rounded-2xl bg-neutral-100 px-6 py-14 shadow-xl md:px-10",
+            error && "border-2 border-red-500"
+          )}
         >
           <div className="absolute right-4 top-4">
             <button

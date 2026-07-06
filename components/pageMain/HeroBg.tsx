@@ -1,12 +1,11 @@
-import Image, { type StaticImageData } from "next/image";
-
-import effectLight from "@/public/imgMainPage/heroBg/effect_light.png";
+import { type StaticImageData } from "next/image";
 import ipad from "@/public/imgMainPage/heroBg/ipad.png";
 import iphone from "@/public/imgMainPage/heroBg/iphone.png";
 import laptop from "@/public/imgMainPage/heroBg/laptop.png";
 import tvremote from "@/public/imgMainPage/heroBg/tvremote.png";
+import { cn } from "@/utils/cn";
 
-/** Design canvas — matches effect_light.png (1920×600). */
+/** Design canvas — hero device layout (1920×600). */
 const CANVAS_W = 1920;
 const CANVAS_H = 600;
 
@@ -32,34 +31,32 @@ const spriteTransform = (rotate: number, flip?: boolean) => {
   return `rotate(${rotate}deg)${flipPart}`;
 };
 
+/**
+ * Rendered as a CSS background (not <Image>) on purpose: purely decorative
+ * sprites must never become LCP candidates. Browsers only score <img>/<video>
+ * elements for LCP, so background-image sidesteps the metric entirely
+ * instead of playing whack-a-mole with `priority`/`fetchPriority` per sprite.
+ */
 const HeroSprite = ({ src, left, top, rotate, flip }: HeroSprite) => (
   <div
-    className="absolute"
+    className="absolute bg-contain bg-top bg-no-repeat"
     style={{
       left: pct(left, CANVAS_W),
       top: pct(top, CANVAS_H),
       width: pct(src.width, CANVAS_W),
+      aspectRatio: `${src.width} / ${src.height}`,
+      backgroundImage: `url(${src.src})`,
       transform: spriteTransform(rotate, flip)
     }}
-  >
-    <Image
-      src={src}
-      alt=""
-      className="h-auto w-full"
-      sizes={`(min-width: 768px) ${Math.round((src.width / CANVAS_W) * 100)}vw, 0px`}
-    />
-  </div>
+  />
 );
 
-const LIGHT_SIZES = `(min-width: ${CANVAS_W}px) ${CANVAS_W}px, 100vw`;
-
 const LightOverlay = ({ className = "" }: { className?: string }) => (
-  <Image
-    src={effectLight}
-    alt=""
-    fill
-    className={`object-cover object-top ${className}`}
-    sizes={LIGHT_SIZES}
+  <div
+    className={cn(
+      "absolute inset-0 bg-linear-to-b from-white/70 to-transparent",
+      className
+    )}
   />
 );
 
@@ -71,11 +68,13 @@ export const HeroBg = () => (
       className="pointer-events-none absolute inset-0 overflow-hidden md:hidden"
     >
       <div
-        className="absolute left-1/2 top-[6%] w-[min(88vw,380px)]"
-        style={{ transform: "translateX(-50%) rotate(-40deg) scaleX(-1)" }}
-      >
-        <Image src={laptop} alt="" className="h-auto w-full" sizes="88vw" />
-      </div>
+        className="absolute left-1/2 top-[6%] w-[min(88vw,380px)] bg-contain bg-top bg-no-repeat"
+        style={{
+          aspectRatio: `${laptop.width} / ${laptop.height}`,
+          backgroundImage: `url(${laptop.src})`,
+          transform: "translateX(-50%) rotate(-40deg) scaleX(-1)"
+        }}
+      />
       <div className="absolute inset-0">
         <LightOverlay />
       </div>

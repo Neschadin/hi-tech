@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/atomic/Container";
 import { LogoLenovo } from "@/public/imgMainPage/section3/LogoLenovo";
-import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingLenovoStrip = () => (
   <section className="relative bg-primary py-14 md:py-20">
@@ -11,7 +10,7 @@ export const LandingLenovoStrip = () => (
       </div>
 
       <div className="flex max-w-xl flex-1 flex-col gap-6 text-white">
-        <h2 className={`${didactGothic} text-3xl md:text-4xl`}>
+        <h2 className="font-didact text-3xl md:text-4xl">
           Авторизований сервісний центр Lenovo
         </h2>
         <p className="text-lg font-medium leading-relaxed">

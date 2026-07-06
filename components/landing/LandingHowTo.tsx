@@ -1,14 +1,11 @@
 import { Container } from "@/components/atomic/Container";
 import { homeHowTo } from "@/lib/content/home";
-import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingHowTo = () => (
   <section className="bg-light-bg py-16 md:py-20">
     <Container className="flex-col gap-8 md:flex-row md:items-start md:gap-16">
       <div className="md:w-1/2">
-        <h2 className={`${didactGothic} text-3xl md:text-4xl`}>
-          {homeHowTo.title}
-        </h2>
+        <h2 className="font-didact text-3xl md:text-4xl">{homeHowTo.title}</h2>
         <p className="mt-4 text-lg leading-relaxed text-text-on-white">
           {homeHowTo.lead}
         </p>

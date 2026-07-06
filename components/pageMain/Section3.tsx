@@ -1,12 +1,6 @@
-import { Didact_Gothic } from "next/font/google";
 import { LogoLenovo } from "@/public/imgMainPage/section3/LogoLenovo";
 import { Button } from "../atomic/Button";
 import { Container } from "../atomic/Container";
-
-const didactGothic = Didact_Gothic({
-  subsets: ["cyrillic"],
-  weight: "400"
-});
 
 export const Section3 = () => {
   return (
@@ -17,7 +11,7 @@ export const Section3 = () => {
         </div>
 
         <div className="flex max-w-[685px] flex-col items-start gap-10">
-          <h3 className={`${didactGothic.className} text-4xl text-white`}>
+          <h3 className="font-didact text-4xl text-white">
             Авторизований сервісний центр Lenovo в твоєму місті
           </h3>
 

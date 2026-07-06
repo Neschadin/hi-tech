@@ -1,6 +1,5 @@
 import Image from "next/image";
 import img from "@/public/imgMainPage/section2/img.png";
-import { didactGothic } from "@/utils/fontDidactGothic";
 import { Button } from "../atomic/Button";
 import { Container } from "../atomic/Container";
 import { CheckIcon } from "../icons/CheckIcon";
@@ -23,7 +22,7 @@ export const Section2 = () => {
         />
 
         <div className="container flex max-w-[568px] flex-col items-start gap-10">
-          <h3 className={`${didactGothic} text-4xl`}>
+          <h3 className="font-didact text-4xl">
             Hi-Tech. Сервiсний центр ремонту технiки
           </h3>
 

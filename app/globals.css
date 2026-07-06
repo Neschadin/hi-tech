@@ -55,6 +55,10 @@
   }
 }
 
+@utility font-didact {
+  font-family: var(--font-didact-gothic), sans-serif;
+}
+
 @utility flex-center {
   display: flex;
   justify-content: center;

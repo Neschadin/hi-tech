@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cn } from "@/utils/cn";
 import { Container } from "./atomic/Container";
 import { DropDown } from "./atomic/DropDown";
 import { NavMenu } from "./HeaderNavMenu";
@@ -6,9 +7,6 @@ import { Logo } from "./icons/Logo";
 
 const btnBase =
   "flex justify-center items-center rounded-full text-lg transition duration-200 ease-out whitespace-nowrap font-medium px-[22px] h-[36px]";
-
-const outlined = `${btnBase} text-primary border-2 border-primary hover:border-blue-600 hover:text-blue-600 focus-visible:border-blue-600 active:text-blue-700 active:border-blue-700`;
-const filled = `${btnBase} font-semibold bg-blue-500 text-white hover:bg-blue-600 focus-visible:bg-blue-600 active:bg-blue-700`;
 
 export const Header = () => {
   return (
@@ -27,11 +25,24 @@ export const Header = () => {
         <div className="grid sm:flex shrink-0 items-center gap-2 md:gap-3">
           <DropDown />
 
-          <Link href="/#poslugy" className={`${outlined} max-sm:hidden`}>
+          <Link
+            href="/#poslugy"
+            className={cn(
+              btnBase,
+              "text-primary border-2 border-primary hover:border-blue-600 hover:text-blue-600 focus-visible:border-blue-600 active:text-blue-700 active:border-blue-700",
+              "max-sm:hidden"
+            )}
+          >
             Послуги
           </Link>
 
-          <Link href="/status" className={filled}>
+          <Link
+            href="/status"
+            className={cn(
+              btnBase,
+              "font-semibold bg-blue-500 text-white hover:bg-blue-600 focus-visible:bg-blue-600 active:bg-blue-700"
+            )}
+          >
             Статус
           </Link>
         </div>

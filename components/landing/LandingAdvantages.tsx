@@ -1,11 +1,10 @@
 import { Container } from "@/components/atomic/Container";
 import { homeAdvantages } from "@/lib/content/home";
-import { didactGothic } from "@/utils/fontDidactGothic";
 
 export const LandingAdvantages = () => (
   <section className="bg-white py-16 md:py-20">
     <Container className="flex-col gap-10">
-      <h2 className={`${didactGothic} text-center text-3xl md:text-[40px]`}>
+      <h2 className="font-didact text-center text-3xl md:text-[40px]">
         Наші переваги
       </h2>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

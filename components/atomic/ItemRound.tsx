@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { FC } from "react";
+import { cn } from "@/utils/cn";
 
 import { ChevronDownIcon } from "../icons/ChevronDownIcon";
 
@@ -18,7 +19,10 @@ export const ItemRound: FC<TProps> = ({
   href = "#"
 }) => (
   <div
-    className={`relative flex h-[260px] w-[208px] flex-col items-center justify-between ${className}`}
+    className={cn(
+      "relative flex h-[260px] w-[208px] flex-col items-center justify-between",
+      className
+    )}
   >
     <div className="flex h-[208px] w-[208px] items-center justify-center rounded-full bg-gray-200">
       <Image src={img} alt="img" />

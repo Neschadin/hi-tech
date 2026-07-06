@@ -2,6 +2,7 @@
 
 import { FC, useEffect, useRef, useState } from "react";
 import { phoneHref, site } from "@/lib/content/site";
+import { cn } from "@/utils/cn";
 import { ChevronDownIcon } from "../icons/ChevronDownIcon";
 import { KyivstarNumber, LifeNumber } from "./PhoneNumbers";
 
@@ -63,11 +64,12 @@ export const DropDown: FC = () => {
       </button>
 
       <div
-        className={`absolute top-0 flex h-[152px] w-full origin-top transform flex-col items-center justify-evenly rounded-[20px] bg-white px-4 pt-[42px] shadow-xl ring-1 ring-black ring-opacity-5 transition focus:outline-none ${
+        className={cn(
+          "absolute top-0 flex h-[152px] w-full origin-top transform flex-col items-center justify-evenly rounded-[20px] bg-white px-4 pt-[42px] shadow-xl ring-1 ring-black ring-opacity-5 transition focus:outline-none",
           isOpen
             ? "scale-y-100 opacity-100 duration-100 ease-out"
             : "invisible scale-y-90 opacity-0 duration-75 ease-in"
-        }`}
+        )}
       >
         <LifeNumber onClick={toggleMenu} />
 

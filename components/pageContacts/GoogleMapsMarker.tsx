@@ -7,6 +7,7 @@ import {
   useApiIsLoaded
 } from "@vis.gl/react-google-maps";
 import { markerPosition, site } from "@/lib/content/site";
+import { cn } from "@/utils/cn";
 import { mobileDetect } from "@/utils/mobileDetect";
 
 const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
@@ -25,7 +26,7 @@ const MapContent = () => {
   if (!isLoaded) {
     return (
       <div
-        className={`${mapContainerClass} animate-pulse bg-light-bg`}
+        className={cn(mapContainerClass, "animate-pulse bg-light-bg")}
         aria-hidden
       />
     );

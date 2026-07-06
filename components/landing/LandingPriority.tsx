@@ -4,7 +4,6 @@ import { Container } from "@/components/atomic/Container";
 import laptop from "@/public/imgMainPage/section1/laptop.png";
 import printer from "@/public/imgMainPage/section1/printer.png";
 import { LogoLenovo } from "@/public/imgMainPage/section3/LogoLenovo";
-import { didactGothic } from "@/utils/fontDidactGothic";
 
 type Card = {
   title: string;
@@ -42,7 +41,7 @@ export const LandingPriority = () => (
   <section id="poslugy" className="scroll-mt-28 bg-white py-16 md:py-20">
     <Container className="flex-col gap-10">
       <div className="text-center">
-        <h2 className={`${didactGothic} text-3xl md:text-[40px]`}>
+        <h2 className="font-didact text-3xl md:text-[40px]">
           Пріоритетні напрями
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-grey">
@@ -72,7 +71,7 @@ export const LandingPriority = () => (
               ) : null}
             </div>
             <div className="flex flex-1 flex-col gap-2 p-6">
-              <h3 className={`${didactGothic} text-2xl`}>{c.title}</h3>
+              <h3 className="text-2xl">{c.title}</h3>
               <p className="text-base text-text-on-white">{c.description}</p>
               <span className="mt-auto pt-2 text-base font-semibold text-primary">
                 Детальніше →

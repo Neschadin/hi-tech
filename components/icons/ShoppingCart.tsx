@@ -1,8 +1,10 @@
+import { cn } from "@/utils/cn";
+
 type TProps = {
   className?: string;
 };
 
-export const ShoppingCart = ({ className = "" }: TProps) => (
+export const ShoppingCart = ({ className }: TProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -10,7 +12,7 @@ export const ShoppingCart = ({ className = "" }: TProps) => (
     strokeWidth={1.5}
     stroke="currentColor"
     aria-hidden="true"
-    className={`h-10 w-10 ${className} text-text-on-white`}
+    className={cn("h-10 w-10 text-text-on-white", className)}
   >
     <path
       strokeLinecap="round"
