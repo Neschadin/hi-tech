@@ -87,5 +87,10 @@ jobs:
       - name: Smoke test
         run: |
           curl -fsS "${SITE_URL}/" >/dev/null
-          test "$(curl -fsS -o /dev/null -w '%{http_code}' -X POST "${SITE_URL}/api/repair-status" \
+          test "$(curl -sS -o /dev/null -w '%{http_code}' -X POST "${SITE_URL}/api/repair-status" \
             -H 'Content-Type: application/json' --data '{}')" = "400"
+          # Legacy redirects (sunset: lib/seo/legacyRedirects.ts, review 2027-07)
+          test "$(curl -fsS -o /dev/null -w '%{http_code}' "${SITE_URL}/lenovo-warranty")" = "301"
+          curl -fsSI "${SITE_URL}/lenovo-warranty" | grep -qi 'location: .*/services/lenovo'
+          test "$(curl -fsS -o /dev/null -w '%{http_code}' "${SITE_URL}/service/remont-noutbukiv-hp")" = "301"
+          curl -fsSI "${SITE_URL}/service/remont-noutbukiv-hp" | grep -qi 'location: .*/services/noutbuky'

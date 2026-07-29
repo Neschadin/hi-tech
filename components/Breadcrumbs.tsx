@@ -48,13 +48,10 @@ export const Breadcrumbs = () => {
   if (pathname === "/") return null;
 
   return (
-    <section
-      id="bread"
-      className="relative min-h-[120px] bg-white md:min-h-[150px]"
-    >
+    <section id="bread" className="relative min-h-30 bg-white md:min-h-37.5">
       <Container className="h-full">
         <nav
-          aria-label="breadcrumb"
+          aria-label="Навігаційний ланцюжок"
           className="absolute bottom-0 mb-6 flex flex-wrap items-center gap-1 text-sm md:mb-8"
         >
           {crumbs.map((c, i) => (

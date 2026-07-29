@@ -20,13 +20,13 @@ export const ItemSquare: FC<TProps> = ({
 }) => (
   <div
     className={cn(
-      "relative flex h-[188px] w-[208px] flex-col items-center justify-between gap-4 rounded-lg border border-gray-300 py-4",
+      "relative flex h-47 w-52 flex-col items-center justify-between gap-4 rounded-lg border border-gray-300 py-4",
       className
     )}
   >
-    <Image src={img} alt="img" />
+    <Image src={img} alt={children} />
 
-    <Link href={href} className="inline-flex items-center gap-[6px]">
+    <Link href={href} className="inline-flex items-center gap-1.5">
       {children} <ChevronDownIcon className="-rotate-90 text-primary" />
     </Link>
   </div>

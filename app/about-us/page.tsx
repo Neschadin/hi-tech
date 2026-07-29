@@ -5,18 +5,27 @@ import { HeroAboutUs } from "@/components/pageAboutUs/HeroAboutUs";
 import { Specialization } from "@/components/pageAboutUs/Specialization";
 import { SpecializationDetails } from "@/components/pageAboutUs/SpecializationDetails";
 import { Section1 } from "@/components/pageMain/Section1";
-import { site } from "@/lib/content/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo/jsonLd";
+import { pageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Інформація про сервісний центр Hi-Tech",
   description:
-    "Команда Hi-Tech, це магазин цифрової техніки, сервісний центр і відділ комісійного продажу, який працює у місті Черкаси ще з 2005 року.",
-  alternates: { canonical: `${site.url}/about-us` }
-};
+    "Команда Hi-Tech — магазин цифрової техніки, сервісний центр і відділ комісійного продажу в Черкасах з 2005 року.",
+  path: "/about-us"
+});
+
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Головна", path: "/" },
+  { name: "Про нас", path: "/about-us" }
+]);
 
 export default function AboutUsPage() {
   return (
     <>
+      <JsonLd data={breadcrumbLd} />
+
       <HeroAboutUs />
 
       <AboutPrimary />

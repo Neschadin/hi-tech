@@ -81,4 +81,29 @@
     @apply hide-scrollbar overflow-x-hidden text-neutral-dark;
     @apply min-h-screen w-screen;
   }
+
+  :target,
+  :focus-visible {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@layer components {
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100%;
+    z-index: 100;
+    border-radius: 9999px;
+    background: var(--color-primary);
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .skip-link:focus {
+    top: 1rem;
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
 }

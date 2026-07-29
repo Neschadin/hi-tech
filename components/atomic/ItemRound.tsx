@@ -20,12 +20,12 @@ export const ItemRound: FC<TProps> = ({
 }) => (
   <div
     className={cn(
-      "relative flex h-[260px] w-[208px] flex-col items-center justify-between",
+      "relative flex h-65 w-52 flex-col items-center justify-between",
       className
     )}
   >
-    <div className="flex h-[208px] w-[208px] items-center justify-center rounded-full bg-gray-200">
-      <Image src={img} alt="img" />
+    <div className="flex size-52 items-center justify-center rounded-full bg-gray-200">
+      <Image src={img} alt={children} />
     </div>
 
     <Link

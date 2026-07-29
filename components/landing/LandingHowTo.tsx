@@ -10,14 +10,17 @@ export const LandingHowTo = () => (
           {homeHowTo.lead}
         </p>
       </div>
-      <ul className="flex flex-1 flex-col gap-4 text-lg font-medium text-neutral-dark">
-        {homeHowTo.bullets.map((b) => (
+      <ul className="flex-1 list-none space-y-4 text-lg font-medium text-neutral-dark">
+        {homeHowTo.bullets.map((b, i) => (
           <li
             key={b}
             className="flex gap-3 rounded-xl border border-divider-light bg-white p-4 shadow-sm"
           >
-            <span className="mt-0.5 text-primary" aria-hidden>
-              ●
+            <span
+              className="grid size-8 shrink-0 place-items-center rounded-full bg-primary text-sm font-bold text-white"
+              aria-hidden
+            >
+              {i + 1}
             </span>
             <span>{b}</span>
           </li>

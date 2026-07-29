@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "sunsetReview": "2027-07",
+    "recheckEvery": "6 months",
+    "deleteWhen": "~30 days zero hits on all legacy paths in GSC + CF Observability",
+    "addNew1to1": "append to redirects[], run bun run deploy:legacy-redirects",
+    "addNewPattern": "edit lib/seo/legacyRedirects.ts, run bun run deploy:legacy-redirects"
+  },
+  "zone": "hi-tech.ck.ua",
+  "redirects": [
+    {
+      "id": "legacy-1to1-lenovo-warranty",
+      "path": "/lenovo-warranty",
+      "destination": "/services/lenovo"
+    },
+    {
+      "id": "legacy-1to1-service-hi-tech",
+      "path": "/service_hi-tech",
+      "destination": "/"
+    },
+    {
+      "id": "legacy-1to1-ru",
+      "path": "/ru",
+      "destination": "/"
+    },
+    {
+      "id": "legacy-1to1-ru-servys",
+      "path": "/ru/servys",
+      "destination": "/"
+    }
+  ]
+}

@@ -1,7 +1,10 @@
 import Link from "next/link";
 
 export const NavMenu = () => (
-  <nav className="hidden w-[510px] flex-col items-center justify-between text-lg font-medium lg:flex lg:flex-row lg:gap-4">
+  <nav
+    aria-label="Головна навігація"
+    className="hidden w-127.5 flex-col items-center justify-between text-lg font-medium lg:flex lg:flex-row lg:gap-4"
+  >
     <Link className="hover:text-black" href="/">
       Головна
     </Link>

@@ -58,7 +58,11 @@ export const site = {
   },
   /** Disclaimer near any price teaser */
   priceDisclaimer:
-    "Вартість залежить від діагностики. Орієнтовні ціни «від … грн»; остаточна сума — після безкоштовної діагностики та вашого погодження."
+    "Вартість залежить від діагностики. Орієнтовні ціни «від … грн»; остаточна сума — після безкоштовної діагностики та вашого погодження.",
+  /** Bump when public content / prices / FAQ change — feeds sitemap lastmod */
+  contentUpdatedAt: "2026-07-29",
+  logoPath: "/icon.png",
+  ogImagePath: "/imgMainPage/heroBg/laptop.png"
 } as const;
 
 function displayTime(time: string) {
@@ -121,15 +125,24 @@ export function openingHoursSpecification() {
 }
 
 export function localBusinessJsonLd() {
+  const logoUrl = `${site.url}${site.logoPath}`;
+  const imageUrl = `${site.url}${site.ogImagePath}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "ComputerRepair",
+    "@id": `${site.url}/#organization`,
     name: site.googleBusinessName,
     alternateName: site.name,
     url: site.url,
     telephone: site.phones.map((p) => p.tel),
     email: site.email,
-    image: `${site.url}/imgMainPage/heroBg/laptop.png`,
+    image: imageUrl,
+    logo: {
+      "@type": "ImageObject",
+      url: logoUrl
+    },
+    sameAs: [site.social.instagram, site.maps.url],
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.streetAddress,
@@ -145,7 +158,7 @@ export function localBusinessJsonLd() {
     },
     hasMap: site.maps.url,
     areaServed: { "@type": "City", name: site.city },
-    priceRange: "$",
+    priceRange: "₴",
     openingHoursSpecification: openingHoursSpecification()
   };
 }

@@ -6,9 +6,13 @@ import { Container } from "@/components/atomic/Container";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getAllServiceSlugs, getServiceBySlug } from "@/lib/content/services";
 import { phoneHref, site } from "@/lib/content/site";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo/jsonLd";
+import { pageMetadata } from "@/lib/seo/metadata";
 import { LogoLenovo } from "@/public/imgMainPage/section3/LogoLenovo";
 
-type Props = { params: Promise<{ slug: string }> };
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
 export function generateStaticParams() {
   return getAllServiceSlugs().map((slug) => ({ slug }));
@@ -18,20 +22,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const s = getServiceBySlug(slug);
   if (!s) return {};
-  const url = `${site.url}/services/${s.slug}`;
-  return {
+  return pageMetadata({
     title: s.metaTitle,
     description: s.metaDescription,
-    alternates: { canonical: url },
-    openGraph: {
-      type: "website",
-      locale: site.locale,
-      url,
-      siteName: site.name,
-      title: s.metaTitle,
-      description: s.metaDescription
-    }
-  };
+    path: `/services/${s.slug}`
+  });
 }
 
 export default async function ServiceCategoryPage({ params }: Props) {
@@ -39,26 +34,12 @@ export default async function ServiceCategoryPage({ params }: Props) {
   const s = getServiceBySlug(slug);
   if (!s) notFound();
 
-  const pageUrl = `${site.url}/services/${s.slug}`;
-  const breadcrumbLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Головна", item: site.url },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Послуги",
-        item: `${site.url}/#poslugy`
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: s.breadcrumbLabel,
-        item: pageUrl
-      }
-    ]
-  };
+  const breadcrumbLd = breadcrumbJsonLd([
+    { name: "Головна", path: "/" },
+    { name: s.breadcrumbLabel, path: `/services/${s.slug}` }
+  ]);
+
+  const serviceLd = serviceJsonLd(s);
 
   const faqLd =
     s.faq.length > 0
@@ -76,6 +57,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
   return (
     <>
       <JsonLd data={breadcrumbLd} />
+      <JsonLd data={serviceLd} />
       {faqLd ? <JsonLd data={faqLd} /> : null}
 
       <section className="bg-white pb-12 pt-8 md:pt-10">
@@ -133,7 +115,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
           </p>
 
           <div className="w-full overflow-x-auto rounded-2xl border border-divider-light">
-            <table className="w-full min-w-[520px] text-left text-base">
+            <table className="w-full min-w-130 text-left text-base">
               <thead className="bg-light-bg text-sm font-semibold uppercase tracking-wide text-neutral-dark">
                 <tr>
                   <th className="px-4 py-3">Послуга</th>
@@ -163,7 +145,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/status"
-              className="inline-flex h-9 items-center justify-center rounded-full border-2 border-primary px-[22px] text-base font-medium text-primary transition duration-200 hover:border-blue-600 hover:text-blue-600"
+              className="inline-flex h-9 items-center justify-center rounded-full border-2 border-primary px-5.5 text-base font-medium text-primary transition duration-200 hover:border-blue-600 hover:text-blue-600"
             >
               Перевірити статус ремонту
             </Link>

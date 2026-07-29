@@ -14,14 +14,14 @@ const CheckItem = ({ children }: { children: string }) => (
 export const Section2 = () => {
   return (
     <section className="relative max-w-[1920px]">
-      <Container className="h-auto py-5 md:h-[692px] md:py-0">
+      <Container className="h-auto py-5 md:h-173 md:py-0">
         <Image
           src={img}
-          alt="img"
-          className="absolute -bottom-6 right-0 z-[-1] hidden max-h-[645px] w-[73%] object-contain md:block"
+          alt="Інженер Hi-Tech за ремонтом комп’ютерної техніки"
+          className="absolute -bottom-6 right-0 z-[-1] hidden max-h-161.25 w-[73%] object-contain md:block"
         />
 
-        <div className="container flex max-w-[568px] flex-col items-start gap-10">
+        <div className="container flex max-w-142 flex-col items-start gap-10">
           <h3 className="font-didact text-4xl">
             Hi-Tech. Сервiсний центр ремонту технiки
           </h3>

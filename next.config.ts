@@ -1,15 +1,16 @@
 import { codeInspectorPlugin } from "code-inspector-plugin";
 import type { NextConfig } from "next";
 
+import staticRedirects from "./workers/legacy-redirects/static-redirects.json";
+
 const nextConfig: NextConfig = {
   async redirects() {
-    return [
-      {
-        source: "/lenovo-warranty",
-        destination: "/services/lenovo",
-        permanent: true
-      }
-    ];
+    // Prod: hi-tech-legacy-redirects Worker. Dev only below. Sunset: lib/seo/legacyRedirects.ts
+    return staticRedirects.redirects.map(({ path, destination }) => ({
+      source: path,
+      destination,
+      permanent: true
+    }));
   },
   async rewrites() {
     return process.env.NODE_ENV !== "development"

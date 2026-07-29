@@ -252,10 +252,10 @@ export const serviceMenuGroups: ServiceMenuGroup[] = [
   {
     id: "other",
     title: "Інша техніка",
-    href: "/about-us",
+    href: "/contacts",
     items: [
-      { label: "Про сервіс", href: "/about-us" },
-      { label: "Контакти", href: "/contacts" }
+      { label: "Консультація та запис", href: "/contacts" },
+      { label: "Про сервіс", href: "/about-us" }
     ]
   }
 ];

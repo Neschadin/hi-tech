@@ -7,24 +7,27 @@ import gpu3 from "@/public/imgMainPage/section4/gpu3.png";
 export const VideoCards = () => {
   return (
     <div className="relative hidden lg:block">
-      <div className="relative h-[568px] w-[568px] overflow-hidden rounded-full bg-gray-100">
+      <div className="relative size-142 overflow-hidden rounded-full bg-gray-100">
         <Image
           src={gpu1}
-          alt="gpu"
-          className="absolute left-[420px] top-[30px]"
+          alt=""
+          aria-hidden
+          className="absolute left-105 top-7.5"
         />
 
         <Image
           src={gpu3}
-          alt="gpu"
-          className="absolute left-[120px] top-[440px]"
+          alt=""
+          aria-hidden
+          className="absolute left-30 top-110"
         />
       </div>
 
       <Image
         src={gpu}
-        alt="gpu"
-        className="absolute left-[-80px] top-[-40px] rotate-[75deg]"
+        alt=""
+        aria-hidden
+        className="absolute -left-20 -top-10 rotate-75"
       />
     </div>
   );

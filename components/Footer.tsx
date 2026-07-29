@@ -10,9 +10,9 @@ const footerLinkClass = "hover:text-white hover:underline underline-offset-4";
 export const Footer = () => {
   return (
     <footer className="mt-auto bg-gray-900 pb-10 pt-16 text-white">
-      <Container className="min-h-[264px] flex-col justify-between">
+      <Container className="min-h-66 flex-col justify-between">
         <div className="flex flex-col justify-between gap-10 lg:flex-row lg:gap-4">
-          <div className="flex max-w-[280px] flex-col justify-between gap-4">
+          <div className="flex max-w-70 flex-col justify-between gap-4">
             <p className="text-2xl font-bold">Hi-Tech</p>
 
             <span className="text-sm">{site.tagline}</span>
@@ -41,7 +41,7 @@ export const Footer = () => {
             <Link className={footerLinkClass} href="/contacts">
               Мобільні пристрої
             </Link>
-            <Link className={footerLinkClass} href="/about-us">
+            <Link className={footerLinkClass} href="/contacts">
               Інша техніка
             </Link>
             <Link className={footerLinkClass} href="/services/lenovo">
@@ -78,12 +78,7 @@ export const Footer = () => {
           </span>
           <span className="md:ml-auto">
             <Link href="/contacts" className="hover:underline">
-              Політика конфіденційності
-            </Link>
-          </span>
-          <span>
-            <Link href="/contacts" className="hover:underline">
-              Умови користування
+              Написати нам
             </Link>
           </span>
         </div>

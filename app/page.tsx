@@ -9,13 +9,14 @@ import { LandingPricingTeaser } from "@/components/landing/LandingPricingTeaser"
 import { LandingPriority } from "@/components/landing/LandingPriority";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { homeFaq } from "@/lib/content/faq";
-import { localBusinessJsonLd, site } from "@/lib/content/site";
+import { localBusinessJsonLd } from "@/lib/content/site";
+import { howToJsonLd } from "@/lib/seo/jsonLd";
+import { pageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  alternates: { canonical: site.url }
-};
+export const metadata: Metadata = pageMetadata({ path: "/" });
 
 const localBusinessLd = localBusinessJsonLd();
+const howToLd = howToJsonLd();
 
 const faqLd = {
   "@context": "https://schema.org",
@@ -29,8 +30,9 @@ const faqLd = {
 
 export default function MainPage() {
   return (
-    <main className="pt-[82px]">
+    <div className="pt-20.5">
       <JsonLd data={localBusinessLd} />
+      <JsonLd data={howToLd} />
       <JsonLd data={faqLd} />
 
       <LandingHero />
@@ -48,6 +50,6 @@ export default function MainPage() {
       <LandingFaq />
 
       <LandingCta />
-    </main>
+    </div>
   );
 }

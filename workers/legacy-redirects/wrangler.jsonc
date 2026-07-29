@@ -1,0 +1,36 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  // Legacy 1:1 + pattern routes. Sunset: lib/seo/legacyRedirects.ts (review 2027-07).
+  "name": "hi-tech-legacy-redirects",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-06-29",
+  "observability": {
+    "enabled": true
+  },
+  "routes": [
+    {
+      "pattern": "hi-tech.ck.ua/lenovo-warranty",
+      "zone_name": "hi-tech.ck.ua"
+    },
+    {
+      "pattern": "hi-tech.ck.ua/service_hi-tech",
+      "zone_name": "hi-tech.ck.ua"
+    },
+    {
+      "pattern": "hi-tech.ck.ua/ru",
+      "zone_name": "hi-tech.ck.ua"
+    },
+    {
+      "pattern": "hi-tech.ck.ua/service",
+      "zone_name": "hi-tech.ck.ua"
+    },
+    {
+      "pattern": "hi-tech.ck.ua/service/*",
+      "zone_name": "hi-tech.ck.ua"
+    },
+    {
+      "pattern": "hi-tech.ck.ua/ru/*",
+      "zone_name": "hi-tech.ck.ua"
+    }
+  ]
+}
