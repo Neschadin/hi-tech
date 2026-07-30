@@ -1,12 +1,16 @@
+import { verifyTurnstileToken } from "./turnstile";
+
 interface Env {
   ONEC_URL: string;
   ONEC_USER: string;
   ONEC_PASS: string;
+  TURNSTILE_SECRET: string;
 }
 
 type RepairStatusRequest = {
   actNumber: string;
   phoneNumber: string;
+  turnstileToken: string;
 };
 
 const ACT_NUMBER_RE = /^НФНФ-\d{6}$/;
@@ -25,10 +29,14 @@ function isValidPhone(phone: string): boolean {
 
 function isValidRequest(data: unknown): data is RepairStatusRequest {
   if (typeof data !== "object" || data === null) return false;
-  const { actNumber, phoneNumber } = data as RepairStatusRequest;
+  const { actNumber, phoneNumber, turnstileToken } =
+    data as RepairStatusRequest;
+
   return (
     typeof actNumber === "string" &&
     typeof phoneNumber === "string" &&
+    typeof turnstileToken === "string" &&
+    turnstileToken.length > 0 &&
     ACT_NUMBER_RE.test(actNumber) &&
     isValidPhone(phoneNumber)
   );
@@ -69,6 +77,17 @@ export default {
 
     if (!isValidRequest(body)) {
       return new Response("Invalid request", { status: 400 });
+    }
+
+    const remoteip = request.headers.get("CF-Connecting-IP");
+    const turnstileOk = await verifyTurnstileToken(
+      env.TURNSTILE_SECRET,
+      body.turnstileToken,
+      remoteip
+    );
+
+    if (!turnstileOk) {
+      return new Response("Forbidden", { status: 403 });
     }
 
     try {

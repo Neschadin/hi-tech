@@ -11,3 +11,6 @@ NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID=c0788552a798ed0d535ca967
 ONEC_URL=http://onec.hi-tech.ck.ua:38380/mb/hs/exchange_hi_tech/data_service
 ONEC_USER=
 ONEC_PASS=
+# Worker-side secret for the existing Turnstile widget (siteverify),
+# set via: wrangler secret put TURNSTILE_SECRET
+TURNSTILE_SECRET=

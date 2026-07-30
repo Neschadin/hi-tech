@@ -16,6 +16,7 @@ permissions:
 env:
   SITE_URL: https://hi-tech.ck.ua
   NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID: c0788552a798ed0d535ca967
+  NEXT_PUBLIC_TURNSTILE_SITE_KEY: 0x4AAAAAAEB8y4EAYpJQATT-
 
 jobs:
   ci:

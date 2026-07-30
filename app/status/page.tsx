@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/atomic/Container";
 import { ModalWindow } from "@/components/ModalWindow";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 import { useStatusForm } from "@/hooks/useStatusForm";
 import { cn } from "@/utils/cn";
 
@@ -94,6 +95,8 @@ export default function StatusPage() {
                   </span>
                 ) : null}
               </div>
+
+              <TurnstileWidget />
 
               <button
                 type="submit"

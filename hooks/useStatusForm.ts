@@ -99,12 +99,23 @@ export function useStatusForm() {
       return;
     }
 
+    const turnstileToken = window.turnstile?.getResponse();
+
+    if (!turnstileToken) {
+      dispatch({
+        type: "SET_ERROR",
+        payload: "Підтвердіть, що ви не робот."
+      });
+      return;
+    }
+
     dispatch({ type: "SET_LOADING", payload: true });
 
     try {
       const reqData = {
         actNumber: state.actNumber,
-        phoneNumber: phoneNumberCleaner(state.phoneNumber)
+        phoneNumber: phoneNumberCleaner(state.phoneNumber),
+        turnstileToken
       };
 
       const statusApi =
@@ -115,6 +126,10 @@ export function useStatusForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(reqData)
       });
+
+      // Turnstile tokens are single-use; reset so a retry gets a fresh one
+      // instead of being rejected as timeout-or-duplicate.
+      window.turnstile?.reset();
 
       if (!response.ok) {
         dispatch({
@@ -132,6 +147,7 @@ export function useStatusForm() {
         dispatch({ type: "SET_FETCHED_DATA", payload: data });
       }
     } catch (error) {
+      window.turnstile?.reset();
       dispatch({
         type: "SET_ERROR",
         payload:
