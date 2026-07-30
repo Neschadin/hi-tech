@@ -14,17 +14,14 @@ type RepairStatusRequest = {
 };
 
 const ACT_NUMBER_RE = /^НФНФ-\d{6}$/;
-const PHONE_PREFIXES = ["[679]3", "6[78]", "9[678]", "50", "66", "39"] as const;
+const PHONE_RE = /^0\d{9}$/;
 
 function cleanPhone(phone: string): string {
   return phone.replace(/^(\+38|38)/, "").replace(/\D/g, "");
 }
 
 function isValidPhone(phone: string): boolean {
-  const cleaned = cleanPhone(phone);
-  return PHONE_PREFIXES.some((item) =>
-    new RegExp(`0${item}\\d{7}$`).test(cleaned)
-  );
+  return PHONE_RE.test(cleanPhone(phone));
 }
 
 function isValidRequest(data: unknown): data is RepairStatusRequest {

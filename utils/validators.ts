@@ -9,11 +9,7 @@ export const formatPhoneNumber = (phoneNumber: string) => {
 
 export const isValidPhoneNumber = (phoneNumber: string) => {
   const cleaned = phoneNumberCleaner(phoneNumber);
-
-  return ["[679]3", "6[78]", "9[678]", "50", "66", "39"].some((item) => {
-    const reg = new RegExp("0" + item + "\\d{7}$");
-    return reg.test(cleaned);
-  });
+  return /^0\d{9}$/.test(cleaned);
 };
 
 export const isValidActNumber = (actNumber: string) => {
