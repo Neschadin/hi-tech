@@ -31,6 +31,14 @@
     {
       "pattern": "hi-tech.ck.ua/ru/*",
       "zone_name": "hi-tech.ck.ua"
+    },
+    {
+      "pattern": "hi-tech.ck.ua/mizhnarodna-harantiia-lenovo-v-ukraini",
+      "zone_name": "hi-tech.ck.ua"
+    },
+    {
+      "pattern": "hi-tech.ck.ua/project-category/*",
+      "zone_name": "hi-tech.ck.ua"
     }
   ]
 }

@@ -18,6 +18,18 @@ export function resolveLegacyRedirect(pathname: string): string | null {
   const raw = pathname.replace(/\/+$/, "") || "/";
   const path = raw.toLowerCase();
 
+  if (
+    path.includes("mizhnarodna-harantiia-lenovo") ||
+    path.includes("harantiia-lenovo") ||
+    path.includes("garantia-lenovo")
+  ) {
+    return "/services/lenovo";
+  }
+
+  if (path.startsWith("/project-category")) {
+    return "/";
+  }
+
   const serviceMatch = path.match(/^\/(?:ru\/)?service(?:\/(.*))?$/);
   if (!serviceMatch) {
     if (path.startsWith("/ru/")) return "/";

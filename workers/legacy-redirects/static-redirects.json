@@ -27,6 +27,11 @@
       "id": "legacy-1to1-ru-servys",
       "path": "/ru/servys",
       "destination": "/"
+    },
+    {
+      "id": "legacy-1to1-mizhnarodna-lenovo",
+      "path": "/mizhnarodna-harantiia-lenovo-v-ukraini",
+      "destination": "/services/lenovo"
     }
   ]
 }
